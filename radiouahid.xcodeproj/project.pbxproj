@@ -1,0 +1,498 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E2B3A1F11881C0160053EE19 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2B3A1F01881C0160053EE19 /* Foundation.framework */; };
+		E2B3A1F31881C0160053EE19 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2B3A1F21881C0160053EE19 /* CoreGraphics.framework */; };
+		E2B3A1F51881C0160053EE19 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2B3A1F41881C0160053EE19 /* UIKit.framework */; };
+		E2B3A1FB1881C0160053EE19 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E2B3A1F91881C0160053EE19 /* InfoPlist.strings */; };
+		E2B3A1FD1881C0160053EE19 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B3A1FC1881C0160053EE19 /* main.m */; };
+		E2B3A2011881C0160053EE19 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B3A2001881C0160053EE19 /* AppDelegate.m */; };
+		E2B3A2041881C0160053EE19 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2B3A2021881C0160053EE19 /* Main.storyboard */; };
+		E2B3A2071881C0160053EE19 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B3A2061881C0160053EE19 /* ViewController.m */; };
+		E2B3A2091881C0160053EE19 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2B3A2081881C0160053EE19 /* Images.xcassets */; };
+		E2B3A2101881C0160053EE19 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2B3A20F1881C0160053EE19 /* XCTest.framework */; };
+		E2B3A2111881C0160053EE19 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2B3A1F01881C0160053EE19 /* Foundation.framework */; };
+		E2B3A2121881C0160053EE19 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2B3A1F41881C0160053EE19 /* UIKit.framework */; };
+		E2B3A21A1881C0160053EE19 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E2B3A2181881C0160053EE19 /* InfoPlist.strings */; };
+		E2B3A21C1881C0160053EE19 /* radiouahidTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B3A21B1881C0160053EE19 /* radiouahidTests.m */; };
+		E2B3A2261881C03D0053EE19 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2B3A2251881C03D0053EE19 /* MediaPlayer.framework */; };
+		E2B3A2281881C0440053EE19 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2B3A2271881C0440053EE19 /* AudioToolbox.framework */; };
+		E2B3A22A1881CA5C0053EE19 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2B3A2291881CA5C0053EE19 /* AVFoundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E2B3A2131881C0160053EE19 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E2B3A1E51881C0160053EE19 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E2B3A1EC1881C0160053EE19;
+			remoteInfo = radiouahid;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E2B3A1ED1881C0160053EE19 /* radiouahid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = radiouahid.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2B3A1F01881C0160053EE19 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E2B3A1F21881C0160053EE19 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		E2B3A1F41881C0160053EE19 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		E2B3A1F81881C0160053EE19 /* radiouahid-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "radiouahid-Info.plist"; sourceTree = "<group>"; };
+		E2B3A1FA1881C0160053EE19 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E2B3A1FC1881C0160053EE19 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E2B3A1FE1881C0160053EE19 /* radiouahid-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "radiouahid-Prefix.pch"; sourceTree = "<group>"; };
+		E2B3A1FF1881C0160053EE19 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E2B3A2001881C0160053EE19 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E2B3A2031881C0160053EE19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E2B3A2051881C0160053EE19 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		E2B3A2061881C0160053EE19 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E2B3A2081881C0160053EE19 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		E2B3A20E1881C0160053EE19 /* radiouahidTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = radiouahidTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2B3A20F1881C0160053EE19 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		E2B3A2171881C0160053EE19 /* radiouahidTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "radiouahidTests-Info.plist"; sourceTree = "<group>"; };
+		E2B3A2191881C0160053EE19 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E2B3A21B1881C0160053EE19 /* radiouahidTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = radiouahidTests.m; sourceTree = "<group>"; };
+		E2B3A2251881C03D0053EE19 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		E2B3A2271881C0440053EE19 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		E2B3A2291881CA5C0053EE19 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E2B3A1EA1881C0160053EE19 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2B3A22A1881CA5C0053EE19 /* AVFoundation.framework in Frameworks */,
+				E2B3A2281881C0440053EE19 /* AudioToolbox.framework in Frameworks */,
+				E2B3A2261881C03D0053EE19 /* MediaPlayer.framework in Frameworks */,
+				E2B3A1F31881C0160053EE19 /* CoreGraphics.framework in Frameworks */,
+				E2B3A1F51881C0160053EE19 /* UIKit.framework in Frameworks */,
+				E2B3A1F11881C0160053EE19 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2B3A20B1881C0160053EE19 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2B3A2101881C0160053EE19 /* XCTest.framework in Frameworks */,
+				E2B3A2121881C0160053EE19 /* UIKit.framework in Frameworks */,
+				E2B3A2111881C0160053EE19 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E2B3A1E41881C0160053EE19 = {
+			isa = PBXGroup;
+			children = (
+				E2B3A1F61881C0160053EE19 /* radiouahid */,
+				E2B3A2151881C0160053EE19 /* radiouahidTests */,
+				E2B3A1EF1881C0160053EE19 /* Frameworks */,
+				E2B3A1EE1881C0160053EE19 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E2B3A1EE1881C0160053EE19 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E2B3A1ED1881C0160053EE19 /* radiouahid.app */,
+				E2B3A20E1881C0160053EE19 /* radiouahidTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E2B3A1EF1881C0160053EE19 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E2B3A2291881CA5C0053EE19 /* AVFoundation.framework */,
+				E2B3A2271881C0440053EE19 /* AudioToolbox.framework */,
+				E2B3A2251881C03D0053EE19 /* MediaPlayer.framework */,
+				E2B3A1F01881C0160053EE19 /* Foundation.framework */,
+				E2B3A1F21881C0160053EE19 /* CoreGraphics.framework */,
+				E2B3A1F41881C0160053EE19 /* UIKit.framework */,
+				E2B3A20F1881C0160053EE19 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E2B3A1F61881C0160053EE19 /* radiouahid */ = {
+			isa = PBXGroup;
+			children = (
+				E2B3A1FF1881C0160053EE19 /* AppDelegate.h */,
+				E2B3A2001881C0160053EE19 /* AppDelegate.m */,
+				E2B3A2021881C0160053EE19 /* Main.storyboard */,
+				E2B3A2051881C0160053EE19 /* ViewController.h */,
+				E2B3A2061881C0160053EE19 /* ViewController.m */,
+				E2B3A2081881C0160053EE19 /* Images.xcassets */,
+				E2B3A1F71881C0160053EE19 /* Supporting Files */,
+			);
+			path = radiouahid;
+			sourceTree = "<group>";
+		};
+		E2B3A1F71881C0160053EE19 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E2B3A1F81881C0160053EE19 /* radiouahid-Info.plist */,
+				E2B3A1F91881C0160053EE19 /* InfoPlist.strings */,
+				E2B3A1FC1881C0160053EE19 /* main.m */,
+				E2B3A1FE1881C0160053EE19 /* radiouahid-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E2B3A2151881C0160053EE19 /* radiouahidTests */ = {
+			isa = PBXGroup;
+			children = (
+				E2B3A21B1881C0160053EE19 /* radiouahidTests.m */,
+				E2B3A2161881C0160053EE19 /* Supporting Files */,
+			);
+			path = radiouahidTests;
+			sourceTree = "<group>";
+		};
+		E2B3A2161881C0160053EE19 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E2B3A2171881C0160053EE19 /* radiouahidTests-Info.plist */,
+				E2B3A2181881C0160053EE19 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E2B3A1EC1881C0160053EE19 /* radiouahid */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E2B3A21F1881C0160053EE19 /* Build configuration list for PBXNativeTarget "radiouahid" */;
+			buildPhases = (
+				E2B3A1E91881C0160053EE19 /* Sources */,
+				E2B3A1EA1881C0160053EE19 /* Frameworks */,
+				E2B3A1EB1881C0160053EE19 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = radiouahid;
+			productName = radiouahid;
+			productReference = E2B3A1ED1881C0160053EE19 /* radiouahid.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E2B3A20D1881C0160053EE19 /* radiouahidTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E2B3A2221881C0160053EE19 /* Build configuration list for PBXNativeTarget "radiouahidTests" */;
+			buildPhases = (
+				E2B3A20A1881C0160053EE19 /* Sources */,
+				E2B3A20B1881C0160053EE19 /* Frameworks */,
+				E2B3A20C1881C0160053EE19 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E2B3A2141881C0160053EE19 /* PBXTargetDependency */,
+			);
+			name = radiouahidTests;
+			productName = radiouahidTests;
+			productReference = E2B3A20E1881C0160053EE19 /* radiouahidTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E2B3A1E51881C0160053EE19 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Muhamed Ahmetovic";
+				TargetAttributes = {
+					E2B3A1EC1881C0160053EE19 = {
+						DevelopmentTeam = 3P3H5QKCM4;
+					};
+					E2B3A20D1881C0160053EE19 = {
+						TestTargetID = E2B3A1EC1881C0160053EE19;
+					};
+				};
+			};
+			buildConfigurationList = E2B3A1E81881C0160053EE19 /* Build configuration list for PBXProject "radiouahid" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E2B3A1E41881C0160053EE19;
+			productRefGroup = E2B3A1EE1881C0160053EE19 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E2B3A1EC1881C0160053EE19 /* radiouahid */,
+				E2B3A20D1881C0160053EE19 /* radiouahidTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E2B3A1EB1881C0160053EE19 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2B3A2091881C0160053EE19 /* Images.xcassets in Resources */,
+				E2B3A1FB1881C0160053EE19 /* InfoPlist.strings in Resources */,
+				E2B3A2041881C0160053EE19 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2B3A20C1881C0160053EE19 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2B3A21A1881C0160053EE19 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E2B3A1E91881C0160053EE19 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2B3A2071881C0160053EE19 /* ViewController.m in Sources */,
+				E2B3A2011881C0160053EE19 /* AppDelegate.m in Sources */,
+				E2B3A1FD1881C0160053EE19 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2B3A20A1881C0160053EE19 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2B3A21C1881C0160053EE19 /* radiouahidTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E2B3A2141881C0160053EE19 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E2B3A1EC1881C0160053EE19 /* radiouahid */;
+			targetProxy = E2B3A2131881C0160053EE19 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E2B3A1F91881C0160053EE19 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E2B3A1FA1881C0160053EE19 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		E2B3A2021881C0160053EE19 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E2B3A2031881C0160053EE19 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E2B3A2181881C0160053EE19 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E2B3A2191881C0160053EE19 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E2B3A21D1881C0160053EE19 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		E2B3A21E1881C0160053EE19 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E2B3A2201881C0160053EE19 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Muhamed Ahmetovic (H8A9NLRL3E)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "radiouahid/radiouahid-Prefix.pch";
+				INFOPLIST_FILE = "radiouahid/radiouahid-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "2CE9AB93-A5B5-4EC3-8C66-E13DAB0FFAFD";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		E2B3A2211881C0160053EE19 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Muhamed Ahmetovic (H8A9NLRL3E)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "radiouahid/radiouahid-Prefix.pch";
+				INFOPLIST_FILE = "radiouahid/radiouahid-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "2CE9AB93-A5B5-4EC3-8C66-E13DAB0FFAFD";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		E2B3A2231881C0160053EE19 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/radiouahid.app/radiouahid";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "radiouahid/radiouahid-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "radiouahidTests/radiouahidTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		E2B3A2241881C0160053EE19 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/radiouahid.app/radiouahid";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "radiouahid/radiouahid-Prefix.pch";
+				INFOPLIST_FILE = "radiouahidTests/radiouahidTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E2B3A1E81881C0160053EE19 /* Build configuration list for PBXProject "radiouahid" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E2B3A21D1881C0160053EE19 /* Debug */,
+				E2B3A21E1881C0160053EE19 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E2B3A21F1881C0160053EE19 /* Build configuration list for PBXNativeTarget "radiouahid" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E2B3A2201881C0160053EE19 /* Debug */,
+				E2B3A2211881C0160053EE19 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E2B3A2221881C0160053EE19 /* Build configuration list for PBXNativeTarget "radiouahidTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E2B3A2231881C0160053EE19 /* Debug */,
+				E2B3A2241881C0160053EE19 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E2B3A1E51881C0160053EE19 /* Project object */;
+}
