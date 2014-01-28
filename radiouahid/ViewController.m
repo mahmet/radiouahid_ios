@@ -25,6 +25,9 @@
     
     player = [[MPMoviePlayerController alloc] initWithContentURL:[NSURL URLWithString:@"http://174.36.1.92:5659/Live"]];
     player.movieSourceType = MPMovieSourceTypeStreaming;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(metadataUpdate:) name:MPMoviePlayerTimedMetadataUpdatedNotification object:nil];
+    
     player.view.hidden = YES;
     [self.view addSubview:player.view];
     
@@ -49,4 +52,19 @@
         [playPauseButton setTitle:@"Play" forState:UIControlStateNormal];
     }
 }
+
+- (void) metadataUpdate:(NSNotification*)notification
+{
+    if ([player timedMetadata] != nil && [[player timedMetadata] count] > 0) {
+        NSArray *metadataArray = [player timedMetadata];
+        
+        for (int i = 0; i < [metadataArray count]; i++) {
+            MPTimedMetadata *metaItem = [[player timedMetadata] objectAtIndex:i];
+            NSLog(@"%@", metaItem.value);
+            NSLog(@"%i", metadataArray.count);
+        }
+    }
+}
+
+
 @end
