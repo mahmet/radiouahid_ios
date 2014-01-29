@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <MediaPlayer/MediaPlayer.h>
+#import "Reachability.h"
 
 @interface ViewController : UIViewController
 
@@ -16,9 +17,17 @@
 @property (strong, nonatomic) IBOutlet UIButton *playPauseButton;
 @property (weak, nonatomic) IBOutlet UILabel *playingLabel;
 - (IBAction)stopButtonTouched:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *loadingLabel;
 
 @property (strong, nonatomic) NSArray *metadataArray;
 @property (strong, nonatomic) MPTimedMetadata *metaItem;
+@property (strong, nonatomic) Reachability *reachability;
+@property NetworkStatus remoteHostStatus;
+@property (strong, nonatomic) UIActivityIndicatorView *spinner;
+
+-(void) initializePlayer;
+-(void) handleNoInternetConnection;
+-(void) handleInternetConnectionReturned;
 
 
 @end

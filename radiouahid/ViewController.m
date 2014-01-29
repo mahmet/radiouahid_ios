@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import <AVFoundation/AVFoundation.h>
 
+
 @interface ViewController ()
 
 @end
@@ -20,26 +21,35 @@
 @synthesize playingLabel;
 @synthesize metaItem;
 @synthesize metadataArray;
+@synthesize reachability;
+@synthesize remoteHostStatus;
+@synthesize loadingLabel;
+@synthesize spinner;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    player = [[MPMoviePlayerController alloc] initWithContentURL:[NSURL URLWithString:@"http://174.36.1.92:5659/Live"]];
-    player.movieSourceType = MPMovieSourceTypeStreaming;
-    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(metadataUpdate:) name:MPMoviePlayerTimedMetadataUpdatedNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(networkChanged:) name:kReachabilityChangedNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playerFinishedLoading:) name:MPMediaPlaybackIsPreparedToPlayDidChangeNotification object:player];
     
-    player.view.hidden = YES;
-    [self.view addSubview:player.view];
+    spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    spinner.center = self.view.center;
+    [self.view addSubview:spinner];
     
-    AVAudioSession *audioSession = [AVAudioSession sharedInstance];
-    [audioSession setCategory:AVAudioSessionCategoryPlayback error:nil];
-    [audioSession setActive:YES error:nil];
-    [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
-    [player setControlStyle:MPMovieControlStyleEmbedded];
     
+    reachability = [Reachability reachabilityForInternetConnection];
+    [reachability startNotifier];
+    
+    remoteHostStatus = [reachability currentReachabilityStatus];
+    
+    if(remoteHostStatus == NotReachable) {
+        [self handleNoInternetConnection];
+    } else {
+        [self initializePlayer];
+    }
     
 }
 
@@ -50,10 +60,14 @@
 }
 
 - (IBAction)togglePlayingStream:(id)sender {
+    if(player.playbackState == MPMoviePlaybackStateStopped) {
+        [spinner startAnimating];
+    }
     if (!player.playbackState == MPMoviePlaybackStatePlaying) {
         
         [player play];
         [playPauseButton setTitle:@"Pause" forState:UIControlStateNormal];
+        
         
         
     } else if(player.playbackState == MPMoviePlaybackStatePlaying) {
@@ -74,7 +88,7 @@
             metaItem = [[player timedMetadata] objectAtIndex:i];
             [playingLabel setText:metaItem.value];
             NSLog(@"%@", metaItem.value);
-            NSLog(@"%i", metadataArray.count);
+            NSLog(@"%lu", (unsigned long)metadataArray.count);
         }
         
         Class playingInfoCenter = NSClassFromString(@"MPNowPlayingInfoCenter");
@@ -102,15 +116,81 @@
 {
     switch (event.subtype) {
         case UIEventSubtypeRemoteControlPlay:
-            
+            [player play];
+            [playPauseButton setTitle:@"Pause" forState:UIControlStateNormal];
             break;
             
         case UIEventSubtypeRemoteControlPause:
-            
+            [player pause];
+            [playPauseButton setTitle:@"Play" forState:UIControlStateNormal];
             break;
             
         default:
             break;
     }
+}
+
+-(void) networkChanged:(NSNotification *) notification
+{
+    remoteHostStatus = [reachability currentReachabilityStatus];
+    
+    if (remoteHostStatus == NotReachable) {
+        [self handleNoInternetConnection];
+    } else if(remoteHostStatus == ReachableViaWiFi) {
+        NSLog(@"Reachable via Wifi");
+        if ([playPauseButton state] == UIControlStateDisabled) {
+            [self handleInternetConnectionReturned];
+        }
+    } else if(remoteHostStatus == ReachableViaWWAN) {
+        NSLog(@"Reachable via 3g");
+        if ([playPauseButton state] == UIControlStateDisabled) {
+            [self handleInternetConnectionReturned];
+        }
+    }
+}
+
+-(void) playerFinishedLoading:(NSNotification *) notification
+{
+    [spinner stopAnimating];
+}
+
+-(void)initializePlayer
+{
+    
+    [spinner startAnimating];
+    
+    player = [[MPMoviePlayerController alloc] initWithContentURL:[NSURL URLWithString:@"http://174.36.1.92:5659/Live"]];
+    player.movieSourceType = MPMovieSourceTypeStreaming;
+    
+    player.view.hidden = YES;
+    [self.view addSubview:player.view];
+    
+    AVAudioSession *audioSession = [AVAudioSession sharedInstance];
+    [audioSession setCategory:AVAudioSessionCategoryPlayback error:nil];
+    [audioSession setActive:YES error:nil];
+    [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
+    [player setControlStyle:MPMovieControlStyleEmbedded];
+    player.shouldAutoplay = NO;
+    [player prepareToPlay];
+    
+    
+    
+}
+
+-(void)handleNoInternetConnection
+{
+    NSLog(@"No internet connection");
+    [player stop];
+    [playPauseButton setTitle:@"Play" forState:UIControlStateNormal];
+    [playPauseButton setEnabled:NO];
+    UIAlertView *noInternetConnectionAlert = [[UIAlertView alloc] initWithTitle:@"Keine Internet Verbindung" message:@"Dein Gerät hat momentan keine Internet Verbindung, sobald du die Verbindung wieder hergestellt hast kannst du aur Radiouahid weiterhören!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+    [noInternetConnectionAlert show];
+}
+
+-(void)handleInternetConnectionReturned
+{
+    NSLog(@"initialize player now");
+    [self initializePlayer];
+    [playPauseButton setEnabled:YES];
 }
 @end
