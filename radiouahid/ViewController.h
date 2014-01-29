@@ -14,5 +14,11 @@
 @property (nonatomic, strong) MPMoviePlayerController *player;
 - (IBAction)togglePlayingStream:(id)sender;
 @property (strong, nonatomic) IBOutlet UIButton *playPauseButton;
+@property (weak, nonatomic) IBOutlet UILabel *playingLabel;
+- (IBAction)stopButtonTouched:(id)sender;
+
+@property (strong, nonatomic) NSArray *metadataArray;
+@property (strong, nonatomic) MPTimedMetadata *metaItem;
+
 
 @end

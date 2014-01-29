@@ -17,6 +17,9 @@
 
 @synthesize player;
 @synthesize playPauseButton;
+@synthesize playingLabel;
+@synthesize metaItem;
+@synthesize metadataArray;
 
 - (void)viewDidLoad
 {
@@ -31,6 +34,13 @@
     player.view.hidden = YES;
     [self.view addSubview:player.view];
     
+    AVAudioSession *audioSession = [AVAudioSession sharedInstance];
+    [audioSession setCategory:AVAudioSessionCategoryPlayback error:nil];
+    [audioSession setActive:YES error:nil];
+    [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
+    [player setControlStyle:MPMovieControlStyleEmbedded];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -41,30 +51,66 @@
 
 - (IBAction)togglePlayingStream:(id)sender {
     if (!player.playbackState == MPMoviePlaybackStatePlaying) {
-        AVAudioSession *audioSession = [AVAudioSession sharedInstance];
-        [audioSession setCategory:AVAudioSessionCategoryPlayback error:nil];
-        [audioSession setActive:YES error:nil];
-        [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
+        
         [player play];
-        [playPauseButton setTitle:@"Stop" forState:UIControlStateNormal];
+        [playPauseButton setTitle:@"Pause" forState:UIControlStateNormal];
+        
+        
     } else if(player.playbackState == MPMoviePlaybackStatePlaying) {
-        [player stop];
+        [player pause];
         [playPauseButton setTitle:@"Play" forState:UIControlStateNormal];
+    } else if(player.playbackState == MPMoviePlaybackStatePaused) {
+        [player play];
+        [playPauseButton setTitle:@"Pause" forState:UIControlStateNormal];
     }
 }
 
 - (void) metadataUpdate:(NSNotification*)notification
 {
     if ([player timedMetadata] != nil && [[player timedMetadata] count] > 0) {
-        NSArray *metadataArray = [player timedMetadata];
+        metadataArray = [player timedMetadata];
         
         for (int i = 0; i < [metadataArray count]; i++) {
-            MPTimedMetadata *metaItem = [[player timedMetadata] objectAtIndex:i];
+            metaItem = [[player timedMetadata] objectAtIndex:i];
+            [playingLabel setText:metaItem.value];
             NSLog(@"%@", metaItem.value);
             NSLog(@"%i", metadataArray.count);
+        }
+        
+        Class playingInfoCenter = NSClassFromString(@"MPNowPlayingInfoCenter");
+        
+        if (playingInfoCenter) {
+            NSMutableDictionary *songInfo = [[NSMutableDictionary alloc] init];
+            
+            MPMediaItemArtwork *albumArt = [[MPMediaItemArtwork alloc] initWithImage:[UIImage imageNamed:@"radiouahid_logo.png"]];
+            
+            [songInfo setObject:metaItem.value forKey:MPMediaItemPropertyTitle];
+            [songInfo setObject:albumArt forKey:MPMediaItemPropertyArtwork];
+            [[MPNowPlayingInfoCenter defaultCenter] setNowPlayingInfo:songInfo];
         }
     }
 }
 
+- (IBAction)stopButtonTouched:(id)sender {
+    if(player.playbackState == MPMoviePlaybackStatePlaying) {
+        [player stop];
+        [playPauseButton setTitle:@"Play" forState:UIControlStateNormal];
+    }
+}
 
+-(void)remoteControlReceivedWithEvent:(UIEvent *)event
+{
+    switch (event.subtype) {
+        case UIEventSubtypeRemoteControlPlay:
+            
+            break;
+            
+        case UIEventSubtypeRemoteControlPause:
+            
+            break;
+            
+        default:
+            break;
+    }
+}
 @end
