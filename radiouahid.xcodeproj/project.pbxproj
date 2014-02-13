@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		709884DE1899890D003318C2 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 709884DD1899890D003318C2 /* Reachability.m */; };
+		70BBE28718AD6BD000BFE5E5 /* green_bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 70BBE28618AD6BD000BFE5E5 /* green_bar.png */; };
+		70BBE28A18AD6DD100BFE5E5 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 70BBE28818AD6DD100BFE5E5 /* bg.png */; };
+		70BBE28B18AD6DD100BFE5E5 /* logo_header.png in Resources */ = {isa = PBXBuildFile; fileRef = 70BBE28918AD6DD100BFE5E5 /* logo_header.png */; };
+		70BBE28E18AD6F7E00BFE5E5 /* play_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 70BBE28C18AD6F7E00BFE5E5 /* play_button.png */; };
+		70BBE28F18AD6F7E00BFE5E5 /* stop_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 70BBE28D18AD6F7E00BFE5E5 /* stop_button.png */; };
 		70EA37B81899241700A7DE39 /* radiouahid_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 70EA37B71899241700A7DE39 /* radiouahid_logo.png */; };
 		E2B3A1F11881C0160053EE19 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2B3A1F01881C0160053EE19 /* Foundation.framework */; };
 		E2B3A1F31881C0160053EE19 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2B3A1F21881C0160053EE19 /* CoreGraphics.framework */; };
@@ -41,6 +46,11 @@
 /* Begin PBXFileReference section */
 		709884DC1899890D003318C2 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		709884DD1899890D003318C2 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		70BBE28618AD6BD000BFE5E5 /* green_bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green_bar.png; sourceTree = "<group>"; };
+		70BBE28818AD6DD100BFE5E5 /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
+		70BBE28918AD6DD100BFE5E5 /* logo_header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_header.png; sourceTree = "<group>"; };
+		70BBE28C18AD6F7E00BFE5E5 /* play_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play_button.png; sourceTree = "<group>"; };
+		70BBE28D18AD6F7E00BFE5E5 /* stop_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stop_button.png; sourceTree = "<group>"; };
 		70EA37B71899241700A7DE39 /* radiouahid_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = radiouahid_logo.png; sourceTree = "<group>"; };
 		E2B3A1ED1881C0160053EE19 /* radiouahid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = radiouahid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2B3A1F01881C0160053EE19 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -145,6 +155,11 @@
 		E2B3A1F71881C0160053EE19 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				70BBE28C18AD6F7E00BFE5E5 /* play_button.png */,
+				70BBE28D18AD6F7E00BFE5E5 /* stop_button.png */,
+				70BBE28818AD6DD100BFE5E5 /* bg.png */,
+				70BBE28918AD6DD100BFE5E5 /* logo_header.png */,
+				70BBE28618AD6BD000BFE5E5 /* green_bar.png */,
 				70EA37B71899241700A7DE39 /* radiouahid_logo.png */,
 				E2B3A1F81881C0160053EE19 /* radiouahid-Info.plist */,
 				E2B3A1F91881C0160053EE19 /* InfoPlist.strings */,
@@ -251,7 +266,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70BBE28718AD6BD000BFE5E5 /* green_bar.png in Resources */,
+				70BBE28B18AD6DD100BFE5E5 /* logo_header.png in Resources */,
 				70EA37B81899241700A7DE39 /* radiouahid_logo.png in Resources */,
+				70BBE28E18AD6F7E00BFE5E5 /* play_button.png in Resources */,
+				70BBE28A18AD6DD100BFE5E5 /* bg.png in Resources */,
+				70BBE28F18AD6F7E00BFE5E5 /* stop_button.png in Resources */,
 				E2B3A2091881C0160053EE19 /* Images.xcassets in Resources */,
 				E2B3A1FB1881C0160053EE19 /* InfoPlist.strings in Resources */,
 				E2B3A2041881C0160053EE19 /* Main.storyboard in Resources */,
