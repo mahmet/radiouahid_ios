@@ -13,11 +13,18 @@
 @interface ViewController : UIViewController
 
 @property (nonatomic, strong) MPMoviePlayerController *player;
+@property (nonatomic, strong) MPMusicPlayerController *musicPlayer;
 - (IBAction)togglePlayingStream:(id)sender;
 @property (strong, nonatomic) IBOutlet UIButton *playPauseButton;
 @property (weak, nonatomic) IBOutlet UILabel *playingLabel;
 - (IBAction)stopButtonTouched:(id)sender;
-@property (weak, nonatomic) IBOutlet UILabel *loadingLabel;
+@property (weak, nonatomic) IBOutlet UIButton *stopButton;
+
+
+@property UIImage *playButtonImage;
+@property UIImage *stopButtonImage;
+@property UIImage *pauseButtonImage;
+
 
 @property (strong, nonatomic) NSArray *metadataArray;
 @property (strong, nonatomic) MPTimedMetadata *metaItem;

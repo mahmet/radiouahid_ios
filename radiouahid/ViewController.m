@@ -18,18 +18,21 @@
 
 @synthesize player;
 @synthesize playPauseButton;
+@synthesize stopButton;
 @synthesize playingLabel;
 @synthesize metaItem;
 @synthesize metadataArray;
 @synthesize reachability;
 @synthesize remoteHostStatus;
-@synthesize loadingLabel;
 @synthesize spinner;
+@synthesize playButtonImage;
+@synthesize stopButtonImage;
+@synthesize pauseButtonImage;
+@synthesize musicPlayer;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(metadataUpdate:) name:MPMoviePlayerTimedMetadataUpdatedNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(networkChanged:) name:kReachabilityChangedNotification object:nil];
@@ -51,31 +54,73 @@
         [self initializePlayer];
     }
     
+    //Set up buttons
+    playPauseButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    playButtonImage = [UIImage imageNamed:@"play_button.png"];
+    [playPauseButton setBackgroundImage:playButtonImage forState:UIControlStateNormal];
+    [playPauseButton addTarget:self action:@selector(togglePlayingStream:) forControlEvents:UIControlEventTouchUpInside];
+    
+    stopButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    stopButtonImage = [UIImage imageNamed:@"stop_button.png"];
+    [stopButton setBackgroundImage:stopButtonImage forState:UIControlStateNormal];
+    [stopButton addTarget:self action:@selector(stopButtonTouched:) forControlEvents:UIControlEventTouchUpInside];
+    
+    pauseButtonImage = [UIImage imageNamed:@"pause_button.png"];
+    
+    // Volumeholder
+    UIView *volumeHolder;
+    
+    CGSize screenSize = [[UIScreen mainScreen] bounds].size;
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+        if (screenSize.height > 480.0f) {
+            //iphone 5
+            [playPauseButton setFrame:CGRectMake(80, 490, 37, 35)];
+            [stopButton setFrame:CGRectMake(200, 490, 37, 35)];
+            volumeHolder = [[UIView alloc] initWithFrame: CGRectMake(30, 540, 260, 20)];
+        } else {
+            //iphone 4
+            [playPauseButton setFrame:CGRectMake(80, 390, 37, 35)];
+            [stopButton setFrame:CGRectMake(200, 390, 37, 35)];
+            volumeHolder = [[UIView alloc] initWithFrame: CGRectMake(30, 440, 260, 20)];
+        }
+    } else {
+        //ipad
+    }
+    
+    [self.view addSubview:playPauseButton];
+    [self.view addSubview:stopButton];
+    
+    [volumeHolder setBackgroundColor: [UIColor clearColor]];
+    [self.view addSubview: volumeHolder];
+    MPVolumeView *myVolumeView = [[MPVolumeView alloc] initWithFrame: volumeHolder.bounds];
+    [volumeHolder addSubview: myVolumeView];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (IBAction)togglePlayingStream:(id)sender {
     if(player.playbackState == MPMoviePlaybackStateStopped) {
-        [spinner startAnimating];
+        //[spinner startAnimating];
     }
     if (!player.playbackState == MPMoviePlaybackStatePlaying) {
         
         [player play];
-        [playPauseButton setTitle:@"Pause" forState:UIControlStateNormal];
+        [playPauseButton setBackgroundImage:pauseButtonImage forState:UIControlStateNormal];
         
         
         
     } else if(player.playbackState == MPMoviePlaybackStatePlaying) {
         [player pause];
-        [playPauseButton setTitle:@"Play" forState:UIControlStateNormal];
+        [playPauseButton setBackgroundImage:playButtonImage forState:UIControlStateNormal];
     } else if(player.playbackState == MPMoviePlaybackStatePaused) {
         [player play];
-        [playPauseButton setTitle:@"Pause" forState:UIControlStateNormal];
+        [playPauseButton setBackgroundImage:pauseButtonImage forState:UIControlStateNormal];
     }
 }
 
@@ -106,10 +151,10 @@
 }
 
 - (IBAction)stopButtonTouched:(id)sender {
-    if(player.playbackState == MPMoviePlaybackStatePlaying) {
-        [player stop];
-        [playPauseButton setTitle:@"Play" forState:UIControlStateNormal];
-    }
+    
+    [player stop];
+    [playPauseButton setBackgroundImage:playButtonImage forState:UIControlStateNormal];
+   
 }
 
 -(void)remoteControlReceivedWithEvent:(UIEvent *)event
@@ -117,12 +162,12 @@
     switch (event.subtype) {
         case UIEventSubtypeRemoteControlPlay:
             [player play];
-            [playPauseButton setTitle:@"Pause" forState:UIControlStateNormal];
+            [playPauseButton setBackgroundImage:pauseButtonImage forState:UIControlStateNormal];
             break;
             
         case UIEventSubtypeRemoteControlPause:
             [player pause];
-            [playPauseButton setTitle:@"Play" forState:UIControlStateNormal];
+            [playPauseButton setBackgroundImage:playButtonImage forState:UIControlStateNormal];
             break;
             
         default:
@@ -181,9 +226,9 @@
 {
     NSLog(@"No internet connection");
     [player stop];
-    [playPauseButton setTitle:@"Play" forState:UIControlStateNormal];
     [playPauseButton setEnabled:NO];
-    UIAlertView *noInternetConnectionAlert = [[UIAlertView alloc] initWithTitle:@"Keine Internet Verbindung" message:@"Dein Gerät hat momentan keine Internet Verbindung, sobald du die Verbindung wieder hergestellt hast kannst du aur Radiouahid weiterhören!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+    [playPauseButton setBackgroundImage:[UIImage imageNamed:@"pause_button_disabled.png"] forState:UIControlStateDisabled];
+    UIAlertView *noInternetConnectionAlert = [[UIAlertView alloc] initWithTitle:@"Keine Internet Verbindung" message:@"Dein Gerät hat momentan keine Internet Verbindung, sobald du die Verbindung wieder hergestellt hast kannst du auf Radiouahid weiterhören!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
     [noInternetConnectionAlert show];
 }
 
@@ -193,4 +238,5 @@
     [self initializePlayer];
     [playPauseButton setEnabled:YES];
 }
+
 @end
