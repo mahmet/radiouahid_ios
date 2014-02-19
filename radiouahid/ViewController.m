@@ -96,6 +96,8 @@
     MPVolumeView *myVolumeView = [[MPVolumeView alloc] initWithFrame: volumeHolder.bounds];
     [volumeHolder addSubview: myVolumeView];
     
+    playingLabel.textColor = [UIColor whiteColor];
+    
     
 }
 

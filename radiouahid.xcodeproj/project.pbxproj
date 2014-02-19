@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7042385618B53D1900A203A0 /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 7042385218B53D1900A203A0 /* facebook.png */; };
+		7042385718B53D1900A203A0 /* social_box.png in Resources */ = {isa = PBXBuildFile; fileRef = 7042385318B53D1900A203A0 /* social_box.png */; };
+		7042385818B53D1900A203A0 /* title_playing_box.png in Resources */ = {isa = PBXBuildFile; fileRef = 7042385418B53D1900A203A0 /* title_playing_box.png */; };
+		7042385918B53D1900A203A0 /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 7042385518B53D1900A203A0 /* twitter.png */; };
+		7042385B18B53E8E00A203A0 /* battery_bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 7042385A18B53E8E00A203A0 /* battery_bar.png */; };
 		709884DE1899890D003318C2 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 709884DD1899890D003318C2 /* Reachability.m */; };
 		7098915F18B5129100F16B5F /* pause_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 7098915E18B5129100F16B5F /* pause_button.png */; };
 		7098916118B530CB00F16B5F /* pause_button_disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 7098916018B530CB00F16B5F /* pause_button_disabled.png */; };
@@ -47,6 +52,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7042385218B53D1900A203A0 /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
+		7042385318B53D1900A203A0 /* social_box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = social_box.png; sourceTree = "<group>"; };
+		7042385418B53D1900A203A0 /* title_playing_box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = title_playing_box.png; sourceTree = "<group>"; };
+		7042385518B53D1900A203A0 /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
+		7042385A18B53E8E00A203A0 /* battery_bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = battery_bar.png; sourceTree = "<group>"; };
 		709884DC1899890D003318C2 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		709884DD1899890D003318C2 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		7098915E18B5129100F16B5F /* pause_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause_button.png; sourceTree = "<group>"; };
@@ -161,6 +171,11 @@
 		E2B3A1F71881C0160053EE19 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7042385A18B53E8E00A203A0 /* battery_bar.png */,
+				7042385218B53D1900A203A0 /* facebook.png */,
+				7042385318B53D1900A203A0 /* social_box.png */,
+				7042385418B53D1900A203A0 /* title_playing_box.png */,
+				7042385518B53D1900A203A0 /* twitter.png */,
 				7098916218B532FE00F16B5F /* eslauft_box.png */,
 				7098916018B530CB00F16B5F /* pause_button_disabled.png */,
 				7098915E18B5129100F16B5F /* pause_button.png */,
@@ -275,6 +290,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7042385718B53D1900A203A0 /* social_box.png in Resources */,
+				7042385918B53D1900A203A0 /* twitter.png in Resources */,
 				70BBE28718AD6BD000BFE5E5 /* green_bar.png in Resources */,
 				70BBE28B18AD6DD100BFE5E5 /* logo_header.png in Resources */,
 				7098915F18B5129100F16B5F /* pause_button.png in Resources */,
@@ -282,9 +299,12 @@
 				7098916118B530CB00F16B5F /* pause_button_disabled.png in Resources */,
 				70BBE28E18AD6F7E00BFE5E5 /* play_button.png in Resources */,
 				7098916318B532FE00F16B5F /* eslauft_box.png in Resources */,
+				7042385818B53D1900A203A0 /* title_playing_box.png in Resources */,
+				7042385B18B53E8E00A203A0 /* battery_bar.png in Resources */,
 				70BBE28A18AD6DD100BFE5E5 /* bg.png in Resources */,
 				70BBE28F18AD6F7E00BFE5E5 /* stop_button.png in Resources */,
 				E2B3A2091881C0160053EE19 /* Images.xcassets in Resources */,
+				7042385618B53D1900A203A0 /* facebook.png in Resources */,
 				E2B3A1FB1881C0160053EE19 /* InfoPlist.strings in Resources */,
 				E2B3A2041881C0160053EE19 /* Main.storyboard in Resources */,
 			);
