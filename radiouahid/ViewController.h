@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *playingLabel;
 - (IBAction)stopButtonTouched:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *stopButton;
+@property (weak, nonatomic) IBOutlet UILabel *feedbackLabel;
 
 @property Boolean firstStart;
 - (IBAction)shareOnFacebook:(id)sender;

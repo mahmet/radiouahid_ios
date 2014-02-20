@@ -88,6 +88,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="feedbackLabel" destination="Mp4-pE-2gq" id="wkX-dd-qT1"/>
                         <outlet property="playingLabel" destination="51M-vm-x1U" id="WII-rL-8fK"/>
                     </connections>
                 </viewController>

@@ -12,6 +12,7 @@
 		7042385818B53D1900A203A0 /* title_playing_box.png in Resources */ = {isa = PBXBuildFile; fileRef = 7042385418B53D1900A203A0 /* title_playing_box.png */; };
 		7042385918B53D1900A203A0 /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 7042385518B53D1900A203A0 /* twitter.png */; };
 		7042385B18B53E8E00A203A0 /* battery_bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 7042385A18B53E8E00A203A0 /* battery_bar.png */; };
+		7056ACC618B6168A00E3214B /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7056ACC518B6168A00E3214B /* FacebookSDK.framework */; };
 		709884DE1899890D003318C2 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 709884DD1899890D003318C2 /* Reachability.m */; };
 		7098915F18B5129100F16B5F /* pause_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 7098915E18B5129100F16B5F /* pause_button.png */; };
 		7098916118B530CB00F16B5F /* pause_button_disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 7098916018B530CB00F16B5F /* pause_button_disabled.png */; };
@@ -40,7 +41,6 @@
 		E2B3A2281881C0440053EE19 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2B3A2271881C0440053EE19 /* AudioToolbox.framework */; };
 		E2B3A22A1881CA5C0053EE19 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2B3A2291881CA5C0053EE19 /* AVFoundation.framework */; };
 		E2EDBEB718B568A000E3065D /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = E2EDBEB618B568A000E3065D /* logo.png */; };
-		E2EDBEB918B5716000E3065D /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2EDBEB818B5716000E3065D /* FacebookSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +59,7 @@
 		7042385418B53D1900A203A0 /* title_playing_box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = title_playing_box.png; sourceTree = "<group>"; };
 		7042385518B53D1900A203A0 /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
 		7042385A18B53E8E00A203A0 /* battery_bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = battery_bar.png; sourceTree = "<group>"; };
+		7056ACC518B6168A00E3214B /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		709884DC1899890D003318C2 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		709884DD1899890D003318C2 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		7098915E18B5129100F16B5F /* pause_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause_button.png; sourceTree = "<group>"; };
@@ -93,7 +94,6 @@
 		E2B3A2271881C0440053EE19 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		E2B3A2291881CA5C0053EE19 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		E2EDBEB618B568A000E3065D /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
-		E2EDBEB818B5716000E3065D /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../Dokumente/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,7 +107,7 @@
 				E2B3A1F31881C0160053EE19 /* CoreGraphics.framework in Frameworks */,
 				E2B3A1F51881C0160053EE19 /* UIKit.framework in Frameworks */,
 				E2B3A1F11881C0160053EE19 /* Foundation.framework in Frameworks */,
-				E2EDBEB918B5716000E3065D /* FacebookSDK.framework in Frameworks */,
+				7056ACC618B6168A00E3214B /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,7 +146,7 @@
 		E2B3A1EF1881C0160053EE19 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E2EDBEB818B5716000E3065D /* FacebookSDK.framework */,
+				7056ACC518B6168A00E3214B /* FacebookSDK.framework */,
 				E2B3A2291881CA5C0053EE19 /* AVFoundation.framework */,
 				E2B3A2271881C0440053EE19 /* AudioToolbox.framework */,
 				E2B3A2251881C03D0053EE19 /* MediaPlayer.framework */,
@@ -468,13 +468,14 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Volumes/WD_750GB/Dokumente/FacebookSDK,
+					/Users/mahmet/Documents/FacebookSDK,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "radiouahid/radiouahid-Prefix.pch";
 				INFOPLIST_FILE = "radiouahid/radiouahid-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "B740C5F2-DAE1-43CA-8F9E-4016F283AA7D";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -489,13 +490,14 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Volumes/WD_750GB/Dokumente/FacebookSDK,
+					/Users/mahmet/Documents/FacebookSDK,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "radiouahid/radiouahid-Prefix.pch";
 				INFOPLIST_FILE = "radiouahid/radiouahid-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "FD5EAF6B-71E3-4722-B68F-4B12170C6587";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

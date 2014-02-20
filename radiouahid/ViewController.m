@@ -31,6 +31,7 @@
 @synthesize pauseButtonImage;
 @synthesize musicPlayer;
 @synthesize firstStart;
+@synthesize feedbackLabel;
 
 - (void)viewDidLoad
 {
@@ -204,12 +205,14 @@
 -(void) playerFinishedLoading:(NSNotification *) notification
 {
     [spinner stopAnimating];
+    [feedbackLabel setText:@"du hörst gerade"];
 }
 
 -(void)initializePlayer
 {
     
     [spinner startAnimating];
+    [feedbackLabel setText:@"Verbindung wird hergestellt..."];
     
     player = [[MPMoviePlayerController alloc] initWithContentURL:[NSURL URLWithString:@"http://174.36.1.92:5659/Live"]];
     player.movieSourceType = MPMovieSourceTypeStreaming;
@@ -248,8 +251,37 @@
 
 - (IBAction)shareOnFacebook:(id)sender {
     
+    metaItem = [[player timedMetadata] objectAtIndex:0];
+    
+    FBShareDialogParams *params = [[FBShareDialogParams alloc] init];
+    params.link = [NSURL URLWithString:@"http://radiouahid.fm"];
+    params.name = @"Radio Uahid";
+    params.caption = @"Radio Uahid caption";
+    params.picture = [NSURL URLWithString:@"http://radiouahid.fm/wp-content/uploads/2013/11/RadioUahid-Logo-ohne-Website-neuer-Slogan-300x250.png"];
+    params.description = [NSString stringWithFormat:@"Ich höre gerade %@ auf Radio Uahid. MashaAllah sehr schön!", metaItem.value];
+    
+    if ([FBDialogs canPresentShareDialogWithParams:params]) {
+        [FBDialogs presentShareDialogWithLink:params.link
+                                         name:params.name
+                                      caption:params.caption
+                                  description:params.description
+                                      picture:params.picture
+                                  clientState:nil
+                                      handler:^(FBAppCall *call, NSDictionary *results, NSError *error) {
+                                          if (error) {
+                                              //Error occured
+                                              NSLog(@"Error publishing story: %@", error.description);
+                                          } else {
+                                              //Success
+                                              NSLog(@"result %@", results);
+                                          }
+                                      }];
+    } else {
+        
+    }
 }
 
 - (IBAction)shareOnTwitter:(id)sender {
+    
 }
 @end
