@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import <AVFoundation/AVFoundation.h>
+#import <FacebookSDK/FacebookSDK.h>
 
 
 @interface ViewController ()
@@ -29,10 +30,13 @@
 @synthesize stopButtonImage;
 @synthesize pauseButtonImage;
 @synthesize musicPlayer;
+@synthesize firstStart;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    firstStart = YES;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(metadataUpdate:) name:MPMoviePlayerTimedMetadataUpdatedNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(networkChanged:) name:kReachabilityChangedNotification object:nil];
@@ -77,7 +81,7 @@
             //iphone 5
             [playPauseButton setFrame:CGRectMake(80, 490, 37, 35)];
             [stopButton setFrame:CGRectMake(200, 490, 37, 35)];
-            volumeHolder = [[UIView alloc] initWithFrame: CGRectMake(30, 540, 260, 20)];
+            volumeHolder = [[UIView alloc] initWithFrame: CGRectMake(30, 535, 260, 20)];
         } else {
             //iphone 4
             [playPauseButton setFrame:CGRectMake(80, 390, 37, 35)];
@@ -107,8 +111,9 @@
 }
 
 - (IBAction)togglePlayingStream:(id)sender {
-    if(player.playbackState == MPMoviePlaybackStateStopped) {
-        //[spinner startAnimating];
+    if(player.playbackState == MPMoviePlaybackStateStopped && !firstStart) {
+        [spinner startAnimating];
+        firstStart = NO;
     }
     if (!player.playbackState == MPMoviePlaybackStatePlaying) {
         
@@ -241,4 +246,10 @@
     [playPauseButton setEnabled:YES];
 }
 
+- (IBAction)shareOnFacebook:(id)sender {
+    
+}
+
+- (IBAction)shareOnTwitter:(id)sender {
+}
 @end

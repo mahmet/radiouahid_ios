@@ -20,6 +20,10 @@
 - (IBAction)stopButtonTouched:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *stopButton;
 
+@property Boolean firstStart;
+- (IBAction)shareOnFacebook:(id)sender;
+- (IBAction)shareOnTwitter:(id)sender;
+
 
 @property UIImage *playButtonImage;
 @property UIImage *stopButtonImage;
