@@ -41,5 +41,7 @@
 -(void) handleNoInternetConnection;
 -(void) handleInternetConnectionReturned;
 
+- (NSDictionary*)parseURLParams:(NSString *)query;
+
 
 @end

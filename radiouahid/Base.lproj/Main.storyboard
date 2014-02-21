@@ -14,7 +14,7 @@
                         <viewControllerLayoutGuide type="bottom" id="9G7-F2-Drf"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="YL2-KY-Fzh">
@@ -22,7 +22,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="green_bar.png" translatesAutoresizingMaskIntoConstraints="NO" id="ikc-T2-uoQ">
-                                <rect key="frame" x="0.0" y="381" width="640" height="198"/>
+                                <rect key="frame" x="0.0" y="469" width="640" height="198"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="5mL-0N-bsM">
@@ -81,6 +81,17 @@
                                     <action selector="shareOnTwitter:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="D3b-BO-C9z"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Qh-oe-cWZ">
+                                <rect key="frame" x="185" y="488" width="37" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" image="stop_button.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="stopButtonTouched:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="MWD-Y1-WxQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -90,6 +101,7 @@
                     <connections>
                         <outlet property="feedbackLabel" destination="Mp4-pE-2gq" id="wkX-dd-qT1"/>
                         <outlet property="playingLabel" destination="51M-vm-x1U" id="WII-rL-8fK"/>
+                        <outlet property="stopButton" destination="6Qh-oe-cWZ" id="XuD-Oq-LFt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -104,12 +116,13 @@
         <image name="green_bar.png" width="640" height="198"/>
         <image name="logo.png" width="385" height="345"/>
         <image name="social_box.png" width="243" height="62"/>
+        <image name="stop_button.png" width="73" height="70"/>
         <image name="title_playing_box.png" width="528" height="70"/>
         <image name="twitter.png" width="55" height="54"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
 </document>

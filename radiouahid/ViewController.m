@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import <AVFoundation/AVFoundation.h>
 #import <FacebookSDK/FacebookSDK.h>
+#import <Social/Social.h>
 
 
 @interface ViewController ()
@@ -62,15 +63,14 @@
     //Set up buttons
     playPauseButton = [UIButton buttonWithType:UIButtonTypeCustom];
     playButtonImage = [UIImage imageNamed:@"play_button.png"];
-    [playPauseButton setBackgroundImage:playButtonImage forState:UIControlStateNormal];
+    pauseButtonImage = [UIImage imageNamed:@"pause_button.png"];
+    [playPauseButton setBackgroundImage:pauseButtonImage forState:UIControlStateNormal];
     [playPauseButton addTarget:self action:@selector(togglePlayingStream:) forControlEvents:UIControlEventTouchUpInside];
     
     stopButton = [UIButton buttonWithType:UIButtonTypeCustom];
     stopButtonImage = [UIImage imageNamed:@"stop_button.png"];
     [stopButton setBackgroundImage:stopButtonImage forState:UIControlStateNormal];
     [stopButton addTarget:self action:@selector(stopButtonTouched:) forControlEvents:UIControlEventTouchUpInside];
-    
-    pauseButtonImage = [UIImage imageNamed:@"pause_button.png"];
     
     // Volumeholder
     UIView *volumeHolder;
@@ -80,13 +80,13 @@
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
         if (screenSize.height > 480.0f) {
             //iphone 5
-            [playPauseButton setFrame:CGRectMake(80, 490, 37, 35)];
-            [stopButton setFrame:CGRectMake(200, 490, 37, 35)];
+            [playPauseButton setFrame:CGRectMake(95, 488, 37, 35)];
+            //[stopButton setFrame:CGRectMake(200, 490, 37, 35)];
             volumeHolder = [[UIView alloc] initWithFrame: CGRectMake(30, 535, 260, 20)];
         } else {
             //iphone 4
-            [playPauseButton setFrame:CGRectMake(80, 390, 37, 35)];
-            [stopButton setFrame:CGRectMake(200, 390, 37, 35)];
+            [playPauseButton setFrame:CGRectMake(95, 390, 37, 35)];
+            [stopButton setFrame:CGRectMake(185, 390, 37, 35)];
             volumeHolder = [[UIView alloc] initWithFrame: CGRectMake(30, 440, 260, 20)];
         }
     } else {
@@ -112,9 +112,9 @@
 }
 
 - (IBAction)togglePlayingStream:(id)sender {
-    if(player.playbackState == MPMoviePlaybackStateStopped && !firstStart) {
+    if(player.playbackState == MPMoviePlaybackStateStopped) {
         [spinner startAnimating];
-        firstStart = NO;
+        [feedbackLabel setText:@"Verbindung wird hergestellt..."];
     }
     if (!player.playbackState == MPMoviePlaybackStatePlaying) {
         
@@ -205,7 +205,7 @@
 -(void) playerFinishedLoading:(NSNotification *) notification
 {
     [spinner stopAnimating];
-    [feedbackLabel setText:@"du hörst gerade"];
+    [feedbackLabel setText:@"Du hörst gerade"];
 }
 
 -(void)initializePlayer
@@ -225,7 +225,7 @@
     [audioSession setActive:YES error:nil];
     [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
     [player setControlStyle:MPMovieControlStyleEmbedded];
-    player.shouldAutoplay = NO;
+    //player.shouldAutoplay = NO;
     [player prepareToPlay];
     
     
@@ -256,7 +256,7 @@
     FBShareDialogParams *params = [[FBShareDialogParams alloc] init];
     params.link = [NSURL URLWithString:@"http://radiouahid.fm"];
     params.name = @"Radio Uahid";
-    params.caption = @"Radio Uahid caption";
+    params.caption = @"Radio Uahid";
     params.picture = [NSURL URLWithString:@"http://radiouahid.fm/wp-content/uploads/2013/11/RadioUahid-Logo-ohne-Website-neuer-Slogan-300x250.png"];
     params.description = [NSString stringWithFormat:@"Ich höre gerade %@ auf Radio Uahid. MashaAllah sehr schön!", metaItem.value];
     
@@ -278,10 +278,79 @@
                                       }];
     } else {
         
+        NSString *desc = [NSString stringWithFormat:@"Ich höre gerade %@ auf Radio Uahid. MashaAllah sehr schön!", metaItem.value];
+        
+        //Native Facebook App not installed -> second method
+        //Put together the dialog parameters
+        NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                       @"Radio Uahid", @"name",
+                                       @"Radio Uahid", @"caption",
+                                       desc, @"description",
+                                       @"http://radiouahid.fm", @"link",
+                                       @"http://radiouahid.fm/wp-content/uploads/2013/11/RadioUahid-Logo-ohne-Website-neuer-Slogan-300x250.png", @"picture",
+                                       nil];
+        
+        //Show the feed dialog
+        [FBWebDialogs presentFeedDialogModallyWithSession:nil
+                                               parameters:params
+                                                  handler:^(FBWebDialogResult result, NSURL *resultURL, NSError *error) {
+                                                   
+                                                      if (error) {
+                                                          NSLog(@"Error publishing story: %@", error.description);
+                                                      } else {
+                                                          if (result == FBWebDialogResultDialogNotCompleted) {
+                                                              // User cancelled.
+                                                              NSLog(@"User canceled");
+                                                          } else {
+                                                              // Handle the publish feed callback
+                                                              NSDictionary *urlParams = [self parseURLParams:[resultURL query]];
+                                                              
+                                                              if (![urlParams valueForKey:@"post_id"]) {
+                                                                  NSLog(@"User cancelled.");
+                                                              } else {
+                                                                  // User clicked the Share button
+                                                                  NSString *result = [NSString stringWithFormat: @"Posted story, id: %@", [urlParams valueForKey:@"post_id"]];
+                                                                  NSLog(@"result %@", result);
+                                                              }
+                                                          }
+                                                      }
+                                                      
+                                                  }];
     }
 }
 
 - (IBAction)shareOnTwitter:(id)sender {
     
+    metaItem = [[player timedMetadata] objectAtIndex:0];
+    
+    SLComposeViewController *twitterViewController = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+    NSString *titleToShare = [NSString stringWithFormat:@"Ich höre gerade %@ auf Radio Uahid. MashaAllah sehr schön!", metaItem.value];
+    
+    if (titleToShare.length > 140) {
+        titleToShare = [titleToShare substringToIndex:140];
+    }
+    
+    [twitterViewController setInitialText:titleToShare];
+    
+    if (![twitterViewController addURL:[NSURL URLWithString:@"http://radiouahid.fm"]]) {
+        NSLog(@"Couldn't add.");
+    }
+    
+    [self presentViewController:twitterViewController animated:YES completion:nil];
+    
 }
+
+// A function for parsing URL parameters returned by the Feed Dialog.
+- (NSDictionary*)parseURLParams:(NSString *)query {
+    NSArray *pairs = [query componentsSeparatedByString:@"&"];
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    for (NSString *pair in pairs) {
+        NSArray *kv = [pair componentsSeparatedByString:@"="];
+        NSString *val =
+        [kv[1] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        params[kv[0]] = val;
+    }
+    return params;
+}
+
 @end

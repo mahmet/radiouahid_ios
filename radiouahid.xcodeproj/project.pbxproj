@@ -13,6 +13,7 @@
 		7042385918B53D1900A203A0 /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 7042385518B53D1900A203A0 /* twitter.png */; };
 		7042385B18B53E8E00A203A0 /* battery_bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 7042385A18B53E8E00A203A0 /* battery_bar.png */; };
 		7056ACC618B6168A00E3214B /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7056ACC518B6168A00E3214B /* FacebookSDK.framework */; };
+		7094A5D118B75D41009B0EF0 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7094A5D018B75D41009B0EF0 /* Social.framework */; };
 		709884DE1899890D003318C2 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 709884DD1899890D003318C2 /* Reachability.m */; };
 		7098915F18B5129100F16B5F /* pause_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 7098915E18B5129100F16B5F /* pause_button.png */; };
 		7098916118B530CB00F16B5F /* pause_button_disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 7098916018B530CB00F16B5F /* pause_button_disabled.png */; };
@@ -60,6 +61,7 @@
 		7042385518B53D1900A203A0 /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
 		7042385A18B53E8E00A203A0 /* battery_bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = battery_bar.png; sourceTree = "<group>"; };
 		7056ACC518B6168A00E3214B /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
+		7094A5D018B75D41009B0EF0 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		709884DC1899890D003318C2 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		709884DD1899890D003318C2 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		7098915E18B5129100F16B5F /* pause_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause_button.png; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7094A5D118B75D41009B0EF0 /* Social.framework in Frameworks */,
 				E2B3A22A1881CA5C0053EE19 /* AVFoundation.framework in Frameworks */,
 				E2B3A2281881C0440053EE19 /* AudioToolbox.framework in Frameworks */,
 				E2B3A2261881C03D0053EE19 /* MediaPlayer.framework in Frameworks */,
@@ -146,6 +149,7 @@
 		E2B3A1EF1881C0160053EE19 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7094A5D018B75D41009B0EF0 /* Social.framework */,
 				7056ACC518B6168A00E3214B /* FacebookSDK.framework */,
 				E2B3A2291881CA5C0053EE19 /* AVFoundation.framework */,
 				E2B3A2271881C0440053EE19 /* AudioToolbox.framework */,
@@ -163,8 +167,8 @@
 			children = (
 				709884DC1899890D003318C2 /* Reachability.h */,
 				709884DD1899890D003318C2 /* Reachability.m */,
-				E2B3A1FF1881C0160053EE19 /* AppDelegate.h */,
 				E2B3A2001881C0160053EE19 /* AppDelegate.m */,
+				E2B3A1FF1881C0160053EE19 /* AppDelegate.h */,
 				E2B3A2021881C0160053EE19 /* Main.storyboard */,
 				E2B3A2051881C0160053EE19 /* ViewController.h */,
 				E2B3A2061881C0160053EE19 /* ViewController.m */,
@@ -475,7 +479,7 @@
 				INFOPLIST_FILE = "radiouahid/radiouahid-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "B740C5F2-DAE1-43CA-8F9E-4016F283AA7D";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -497,7 +501,7 @@
 				INFOPLIST_FILE = "radiouahid/radiouahid-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "FD5EAF6B-71E3-4722-B68F-4B12170C6587";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
