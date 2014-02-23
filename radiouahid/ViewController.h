@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <MediaPlayer/MediaPlayer.h>
 #import "Reachability.h"
+#import <MessageUI/MessageUI.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <MFMailComposeViewControllerDelegate>
 
 @property (nonatomic, strong) MPMoviePlayerController *player;
 @property (nonatomic, strong) MPMusicPlayerController *musicPlayer;
@@ -45,6 +46,8 @@
 -(void) initializePlayer;
 -(void) handleNoInternetConnection;
 -(void) handleInternetConnectionReturned;
+-(void) prepareFirstRun;
+-(BOOL) isFirstRun;
 
 - (NSDictionary*)parseURLParams:(NSString *)query;
 

@@ -18,6 +18,7 @@
 		7050FC2618BA019B0048DB0F /* milky.png in Resources */ = {isa = PBXBuildFile; fileRef = 7050FC2518BA019B0048DB0F /* milky.png */; };
 		7050FC2818BA033C0048DB0F /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 7050FC2718BA033C0048DB0F /* arrow.png */; };
 		7050FC2A18BA03C80048DB0F /* contact_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 7050FC2918BA03C80048DB0F /* contact_button.png */; };
+		7050FC2C18BA1C800048DB0F /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7050FC2B18BA1C800048DB0F /* MessageUI.framework */; };
 		7056ACC618B6168A00E3214B /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7056ACC518B6168A00E3214B /* FacebookSDK.framework */; };
 		7094A5D118B75D41009B0EF0 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7094A5D018B75D41009B0EF0 /* Social.framework */; };
 		709884DE1899890D003318C2 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 709884DD1899890D003318C2 /* Reachability.m */; };
@@ -72,6 +73,7 @@
 		7050FC2518BA019B0048DB0F /* milky.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = milky.png; sourceTree = "<group>"; };
 		7050FC2718BA033C0048DB0F /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
 		7050FC2918BA03C80048DB0F /* contact_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contact_button.png; sourceTree = "<group>"; };
+		7050FC2B18BA1C800048DB0F /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		7056ACC518B6168A00E3214B /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		7094A5D018B75D41009B0EF0 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		709884DC1899890D003318C2 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7050FC2C18BA1C800048DB0F /* MessageUI.framework in Frameworks */,
 				7094A5D118B75D41009B0EF0 /* Social.framework in Frameworks */,
 				E2B3A22A1881CA5C0053EE19 /* AVFoundation.framework in Frameworks */,
 				E2B3A2281881C0440053EE19 /* AudioToolbox.framework in Frameworks */,
@@ -161,6 +164,7 @@
 		E2B3A1EF1881C0160053EE19 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7050FC2B18BA1C800048DB0F /* MessageUI.framework */,
 				7094A5D018B75D41009B0EF0 /* Social.framework */,
 				7056ACC518B6168A00E3214B /* FacebookSDK.framework */,
 				E2B3A2291881CA5C0053EE19 /* AVFoundation.framework */,
