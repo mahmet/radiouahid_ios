@@ -92,6 +92,48 @@
                                     <action selector="stopButtonTouched:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="MWD-Y1-WxQ"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IGD-w6-pJx">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h6r-0S-gmg">
+                                        <rect key="frame" x="0.0" y="56" width="320" height="316"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="beta_info.png" translatesAutoresizingMaskIntoConstraints="NO" id="jbf-L2-Z2K">
+                                        <rect key="frame" x="33" y="59" width="254" height="294"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="arrow.png" translatesAutoresizingMaskIntoConstraints="NO" id="skk-O9-7eg">
+                                        <rect key="frame" x="139" y="357" width="42" height="49"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gaz-ea-5Ay">
+                                        <rect key="frame" x="131" y="411" width="58" height="43"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <state key="normal" backgroundImage="contact_button.png">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="contactButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="IhX-pY-TUe"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3oK-yU-ePG">
+                                        <rect key="frame" x="0.0" y="53" width="320" height="316"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="hideInfoButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="lnA-yS-NnP"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -100,6 +142,7 @@
                     </view>
                     <connections>
                         <outlet property="feedbackLabel" destination="Mp4-pE-2gq" id="wkX-dd-qT1"/>
+                        <outlet property="infoView" destination="IGD-w6-pJx" id="Qke-NG-VEt"/>
                         <outlet property="playingLabel" destination="51M-vm-x1U" id="WII-rL-8fK"/>
                         <outlet property="stopButton" destination="6Qh-oe-cWZ" id="XuD-Oq-LFt"/>
                     </connections>
@@ -109,8 +152,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.png" width="84" height="99"/>
         <image name="battery_bar.png" width="650" height="40"/>
+        <image name="beta_info.png" width="508" height="589"/>
         <image name="bg.png" width="640" height="1136"/>
+        <image name="contact_button.png" width="117" height="86"/>
         <image name="eslauft_box.png" width="528" height="70"/>
         <image name="facebook.png" width="55" height="54"/>
         <image name="green_bar.png" width="640" height="198"/>

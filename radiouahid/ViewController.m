@@ -33,6 +33,8 @@
 @synthesize musicPlayer;
 @synthesize firstStart;
 @synthesize feedbackLabel;
+@synthesize infoView;
+@synthesize infoButton;
 
 - (void)viewDidLoad
 {
@@ -72,6 +74,11 @@
     [stopButton setBackgroundImage:stopButtonImage forState:UIControlStateNormal];
     [stopButton addTarget:self action:@selector(stopButtonTouched:) forControlEvents:UIControlEventTouchUpInside];
     
+    infoButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    UIImage *infoButtonImage = [UIImage imageNamed:@"info.png"];
+    [infoButton setBackgroundImage:infoButtonImage forState:UIControlStateNormal];
+    [infoButton addTarget:self action:@selector(infoButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+    
     // Volumeholder
     UIView *volumeHolder;
     
@@ -82,11 +89,13 @@
             //iphone 5
             [playPauseButton setFrame:CGRectMake(95, 488, 37, 35)];
             //[stopButton setFrame:CGRectMake(200, 490, 37, 35)];
+            [infoButton setFrame:CGRectMake(5, 445, 20, 20)];
             volumeHolder = [[UIView alloc] initWithFrame: CGRectMake(30, 535, 260, 20)];
         } else {
             //iphone 4
             [playPauseButton setFrame:CGRectMake(95, 390, 37, 35)];
             [stopButton setFrame:CGRectMake(185, 390, 37, 35)];
+            [infoButton setFrame:CGRectMake(5, 355, 20, 20)];
             volumeHolder = [[UIView alloc] initWithFrame: CGRectMake(30, 440, 260, 20)];
         }
     } else {
@@ -95,6 +104,7 @@
     
     [self.view addSubview:playPauseButton];
     [self.view addSubview:stopButton];
+    [self.view addSubview:infoButton];
     
     [volumeHolder setBackgroundColor: [UIColor clearColor]];
     [self.view addSubview: volumeHolder];
@@ -103,7 +113,8 @@
     
     playingLabel.textColor = [UIColor whiteColor];
     
-    
+    infoView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"milky.png"]];
+    [infoView setHidden:YES];
 }
 
 - (void)didReceiveMemoryWarning
@@ -258,7 +269,7 @@
     params.name = @"Radio Uahid";
     params.caption = @"Radio Uahid";
     params.picture = [NSURL URLWithString:@"http://radiouahid.fm/wp-content/uploads/2013/11/RadioUahid-Logo-ohne-Website-neuer-Slogan-300x250.png"];
-    params.description = [NSString stringWithFormat:@"Ich höre gerade %@ auf Radio Uahid. MashaAllah sehr schön!", metaItem.value];
+    params.description = [NSString stringWithFormat:@"Ich höre gerade: %@ auf Radio Uahid. Mash Allah sehr schön!", metaItem.value];
     
     if ([FBDialogs canPresentShareDialogWithParams:params]) {
         [FBDialogs presentShareDialogWithLink:params.link
@@ -278,7 +289,7 @@
                                       }];
     } else {
         
-        NSString *desc = [NSString stringWithFormat:@"Ich höre gerade %@ auf Radio Uahid. MashaAllah sehr schön!", metaItem.value];
+        NSString *desc = [NSString stringWithFormat:@"Ich höre gerade: %@ auf Radio Uahid. Mash Allah sehr schön!", metaItem.value];
         
         //Native Facebook App not installed -> second method
         //Put together the dialog parameters
@@ -324,7 +335,7 @@
     metaItem = [[player timedMetadata] objectAtIndex:0];
     
     SLComposeViewController *twitterViewController = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
-    NSString *titleToShare = [NSString stringWithFormat:@"Ich höre gerade %@ auf Radio Uahid. MashaAllah sehr schön!", metaItem.value];
+    NSString *titleToShare = [NSString stringWithFormat:@"Ich höre gerade: %@ auf Radio Uahid. Mash Allah sehr schön!", metaItem.value];
     
     if (titleToShare.length > 140) {
         titleToShare = [titleToShare substringToIndex:140];
@@ -351,6 +362,22 @@
         params[kv[0]] = val;
     }
     return params;
+}
+
+- (IBAction)infoButtonPressed:(id)sender {
+    if ([infoView isHidden]) {
+        [infoView setHidden:NO];
+    } else {
+        [infoView setHidden:YES];
+    }
+}
+
+- (IBAction)contactButtonPressed:(id)sender {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://radiouahid.fm/kontakt"]];
+}
+
+- (IBAction)hideInfoButton:(id)sender {
+    [infoView setHidden:YES];
 }
 
 @end

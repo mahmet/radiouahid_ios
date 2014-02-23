@@ -20,11 +20,16 @@
 - (IBAction)stopButtonTouched:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *stopButton;
 @property (weak, nonatomic) IBOutlet UILabel *feedbackLabel;
+- (IBAction)hideInfoButton:(id)sender;
 
 @property Boolean firstStart;
 - (IBAction)shareOnFacebook:(id)sender;
 - (IBAction)shareOnTwitter:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UIView *infoView;
+- (IBAction)infoButtonPressed:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *infoButton;
+- (IBAction)contactButtonPressed:(id)sender;
 
 @property UIImage *playButtonImage;
 @property UIImage *stopButtonImage;
