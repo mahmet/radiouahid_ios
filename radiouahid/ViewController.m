@@ -79,6 +79,12 @@
     [infoButton setBackgroundImage:infoButtonImage forState:UIControlStateNormal];
     [infoButton addTarget:self action:@selector(infoButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
     
+    playingLabel = [[UILabel alloc] init];
+    [playingLabel setTextColor:[UIColor whiteColor]];
+    [playingLabel setBackgroundColor:[UIColor clearColor]];
+    [playingLabel setUserInteractionEnabled:NO];
+    [playingLabel setTextAlignment:NSTextAlignmentCenter];
+    
     // Volumeholder
     UIView *volumeHolder;
     
@@ -87,16 +93,18 @@
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
         if (screenSize.height > 480.0f) {
             //iphone 5
-            [playPauseButton setFrame:CGRectMake(95, 488, 37, 35)];
+            [playPauseButton setFrame:CGRectMake(10, 523, 37, 35)];
             //[stopButton setFrame:CGRectMake(200, 490, 37, 35)];
-            [infoButton setFrame:CGRectMake(5, 445, 20, 20)];
-            volumeHolder = [[UIView alloc] initWithFrame: CGRectMake(30, 535, 260, 20)];
+            [infoButton setFrame:CGRectMake(150, 32, 37, 35)];
+            volumeHolder = [[UIView alloc] initWithFrame: CGRectMake(50, 530, 220, 20)];
+            [playingLabel setFrame:CGRectMake(0, 460, screenSize.width, 50)];
         } else {
             //iphone 4
-            [playPauseButton setFrame:CGRectMake(95, 390, 37, 35)];
-            [stopButton setFrame:CGRectMake(185, 390, 37, 35)];
-            [infoButton setFrame:CGRectMake(5, 355, 20, 20)];
-            volumeHolder = [[UIView alloc] initWithFrame: CGRectMake(30, 440, 260, 20)];
+            [playPauseButton setFrame:CGRectMake(10, 440, 37, 35)];
+            [stopButton setFrame:CGRectMake(275, 440, 37, 35)];
+            [infoButton setFrame:CGRectMake(150, 32, 37, 35)];
+            volumeHolder = [[UIView alloc] initWithFrame: CGRectMake(50, 450, 220, 20)];
+            [playingLabel setFrame:CGRectMake(0, 383, screenSize.width, 50)];
         }
     } else {
         //ipad
@@ -105,6 +113,7 @@
     [self.view addSubview:playPauseButton];
     [self.view addSubview:stopButton];
     [self.view addSubview:infoButton];
+    [self.view addSubview:playingLabel];
     
     [volumeHolder setBackgroundColor: [UIColor clearColor]];
     [self.view addSubview: volumeHolder];
@@ -223,7 +232,7 @@
 -(void) playerFinishedLoading:(NSNotification *) notification
 {
     [spinner stopAnimating];
-    [feedbackLabel setText:@"Du hörst gerade"];
+    [feedbackLabel setText:@"On Air"];
 }
 
 -(void)initializePlayer
@@ -271,12 +280,12 @@
     
     metaItem = [[player timedMetadata] objectAtIndex:0];
     
-    FBShareDialogParams *params = [[FBShareDialogParams alloc] init];
-    params.link = [NSURL URLWithString:@"http://radiouahid.fm"];
-    params.name = @"Radio Uahid";
-    params.caption = @"Radio Uahid";
-    params.picture = [NSURL URLWithString:@"http://radiouahid.fm/wp-content/uploads/2013/11/RadioUahid-Logo-ohne-Website-neuer-Slogan-300x250.png"];
-    params.description = [NSString stringWithFormat:@"Ich höre gerade: %@ auf Radio Uahid. Mash Allah sehr schön!", metaItem.value];
+    FBLinkShareParams *params = [[FBLinkShareParams alloc] initWithLink:[NSURL URLWithString:@"http://radiouahid.fm"]
+                                                                   name:@"Radio Uahid"
+                                                                caption:@"Radio Uahid"
+                                                            description:[NSString stringWithFormat:@"Ich höre gerade: %@ auf Radio Uahid. Mash Allah sehr schön!", metaItem.value]
+                                                                picture:[NSURL URLWithString:@"http://radiouahid.fm/wp-content/uploads/2013/11/RadioUahid-Logo-ohne-Website-neuer-Slogan-300x250.png"]];
+ 
     
     if ([FBDialogs canPresentShareDialogWithParams:params]) {
         [FBDialogs presentShareDialogWithLink:params.link

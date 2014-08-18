@@ -17,7 +17,7 @@
 @property (nonatomic, strong) MPMusicPlayerController *musicPlayer;
 - (IBAction)togglePlayingStream:(id)sender;
 @property (strong, nonatomic) IBOutlet UIButton *playPauseButton;
-@property (weak, nonatomic) IBOutlet UILabel *playingLabel;
+@property (strong, nonatomic) IBOutlet UILabel *playingLabel;
 - (IBAction)stopButtonTouched:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *stopButton;
 @property (weak, nonatomic) IBOutlet UILabel *feedbackLabel;
