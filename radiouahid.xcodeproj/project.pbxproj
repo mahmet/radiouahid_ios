@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		701271A7199F6677004B1E88 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 701271A6199F6677004B1E88 /* FacebookSDK.framework */; };
 		701271A9199F6B69004B1E88 /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = 701271A8199F6B69004B1E88 /* info.png */; };
+		703CE2C719A28BF300D09CB3 /* MarqueeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 703CE2C619A28BF300D09CB3 /* MarqueeLabel.m */; };
+		703CE2C919A28C0A00D09CB3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 703CE2C819A28C0A00D09CB3 /* QuartzCore.framework */; };
+		703CE2CB19A291AA00D09CB3 /* BugSense-iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 703CE2CA19A291AA00D09CB3 /* BugSense-iOS.framework */; };
+		703CE2CD19A291C000D09CB3 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 703CE2CC19A291C000D09CB3 /* SystemConfiguration.framework */; };
+		703CE2CF19A291C900D09CB3 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 703CE2CE19A291C900D09CB3 /* libz.dylib */; };
 		7042385618B53D1900A203A0 /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 7042385218B53D1900A203A0 /* facebook.png */; };
 		7042385718B53D1900A203A0 /* social_box.png in Resources */ = {isa = PBXBuildFile; fileRef = 7042385318B53D1900A203A0 /* social_box.png */; };
 		7042385818B53D1900A203A0 /* title_playing_box.png in Resources */ = {isa = PBXBuildFile; fileRef = 7042385418B53D1900A203A0 /* title_playing_box.png */; };
@@ -65,6 +70,12 @@
 /* Begin PBXFileReference section */
 		701271A6199F6677004B1E88 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		701271A8199F6B69004B1E88 /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info.png; sourceTree = "<group>"; };
+		703CE2C519A28BF300D09CB3 /* MarqueeLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarqueeLabel.h; sourceTree = "<group>"; };
+		703CE2C619A28BF300D09CB3 /* MarqueeLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarqueeLabel.m; sourceTree = "<group>"; };
+		703CE2C819A28C0A00D09CB3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		703CE2CA19A291AA00D09CB3 /* BugSense-iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "BugSense-iOS.framework"; path = "../../../Downloads/BugSense 3.6/BugSense-iOS.framework"; sourceTree = "<group>"; };
+		703CE2CC19A291C000D09CB3 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		703CE2CE19A291C900D09CB3 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		7042385218B53D1900A203A0 /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
 		7042385318B53D1900A203A0 /* social_box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = social_box.png; sourceTree = "<group>"; };
 		7042385418B53D1900A203A0 /* title_playing_box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = title_playing_box.png; sourceTree = "<group>"; };
@@ -119,6 +130,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				703CE2CF19A291C900D09CB3 /* libz.dylib in Frameworks */,
+				703CE2CD19A291C000D09CB3 /* SystemConfiguration.framework in Frameworks */,
+				703CE2CB19A291AA00D09CB3 /* BugSense-iOS.framework in Frameworks */,
+				703CE2C919A28C0A00D09CB3 /* QuartzCore.framework in Frameworks */,
 				7050FC2C18BA1C800048DB0F /* MessageUI.framework in Frameworks */,
 				701271A7199F6677004B1E88 /* FacebookSDK.framework in Frameworks */,
 				7094A5D118B75D41009B0EF0 /* Social.framework in Frameworks */,
@@ -167,6 +182,10 @@
 		E2B3A1EF1881C0160053EE19 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				703CE2CE19A291C900D09CB3 /* libz.dylib */,
+				703CE2CC19A291C000D09CB3 /* SystemConfiguration.framework */,
+				703CE2CA19A291AA00D09CB3 /* BugSense-iOS.framework */,
+				703CE2C819A28C0A00D09CB3 /* QuartzCore.framework */,
 				7050FC2B18BA1C800048DB0F /* MessageUI.framework */,
 				7094A5D018B75D41009B0EF0 /* Social.framework */,
 				7056ACC518B6168A00E3214B /* FacebookSDK.framework */,
@@ -185,6 +204,8 @@
 		E2B3A1F61881C0160053EE19 /* radiouahid */ = {
 			isa = PBXGroup;
 			children = (
+				703CE2C519A28BF300D09CB3 /* MarqueeLabel.h */,
+				703CE2C619A28BF300D09CB3 /* MarqueeLabel.m */,
 				709884DC1899890D003318C2 /* Reachability.h */,
 				709884DD1899890D003318C2 /* Reachability.m */,
 				E2B3A2001881C0160053EE19 /* AppDelegate.m */,
@@ -369,6 +390,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				703CE2C719A28BF300D09CB3 /* MarqueeLabel.m in Sources */,
 				E2B3A2071881C0160053EE19 /* ViewController.m in Sources */,
 				E2B3A2011881C0160053EE19 /* AppDelegate.m in Sources */,
 				709884DE1899890D003318C2 /* Reachability.m in Sources */,
@@ -501,9 +523,12 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/mahmet/Documents/FacebookSDK,
+					/Users/mahmet/Downloads/BugSense,
+					3.6,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "radiouahid/radiouahid-Prefix.pch";
@@ -522,9 +547,12 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/mahmet/Documents/FacebookSDK,
+					/Users/mahmet/Downloads/BugSense,
+					3.6,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "radiouahid/radiouahid-Prefix.pch";

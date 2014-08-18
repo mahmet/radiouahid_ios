@@ -10,6 +10,8 @@
 #import <MediaPlayer/MediaPlayer.h>
 #import "Reachability.h"
 #import <MessageUI/MessageUI.h>
+#import "MarqueeLabel.h"
+#import <BugSense-iOS/BugSenseController.h>
 
 @interface ViewController : UIViewController <MFMailComposeViewControllerDelegate>
 
@@ -17,7 +19,7 @@
 @property (nonatomic, strong) MPMusicPlayerController *musicPlayer;
 - (IBAction)togglePlayingStream:(id)sender;
 @property (strong, nonatomic) IBOutlet UIButton *playPauseButton;
-@property (strong, nonatomic) IBOutlet UILabel *playingLabel;
+@property (strong, nonatomic) IBOutlet MarqueeLabel *playingLabel;
 - (IBAction)stopButtonTouched:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *stopButton;
 @property (weak, nonatomic) IBOutlet UILabel *feedbackLabel;

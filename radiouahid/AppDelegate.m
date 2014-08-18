@@ -9,11 +9,13 @@
 #import "AppDelegate.h"
 #import <FacebookSDK/FacebookSDK.h>
 
+
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    [BugSenseController sharedControllerWithBugSenseAPIKey:@"fc86df99"];
     
     return YES;
 }

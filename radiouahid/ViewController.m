@@ -79,11 +79,15 @@
     [infoButton setBackgroundImage:infoButtonImage forState:UIControlStateNormal];
     [infoButton addTarget:self action:@selector(infoButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
     
-    playingLabel = [[UILabel alloc] init];
+    playingLabel = [[MarqueeLabel alloc] init];
     [playingLabel setTextColor:[UIColor whiteColor]];
     [playingLabel setBackgroundColor:[UIColor clearColor]];
     [playingLabel setUserInteractionEnabled:NO];
     [playingLabel setTextAlignment:NSTextAlignmentCenter];
+    [playingLabel setRate:20.0];
+    [playingLabel setFadeLength:10.0f];
+    [playingLabel setMarqueeType:MLContinuous];
+    
     
     // Volumeholder
     UIView *volumeHolder;
@@ -97,14 +101,14 @@
             //[stopButton setFrame:CGRectMake(200, 490, 37, 35)];
             [infoButton setFrame:CGRectMake(150, 32, 37, 35)];
             volumeHolder = [[UIView alloc] initWithFrame: CGRectMake(50, 530, 220, 20)];
-            [playingLabel setFrame:CGRectMake(0, 460, screenSize.width, 50)];
+            [playingLabel setFrame:CGRectMake(15, 460, screenSize.width * 0.9, 50)];
         } else {
             //iphone 4
             [playPauseButton setFrame:CGRectMake(10, 440, 37, 35)];
             [stopButton setFrame:CGRectMake(275, 440, 37, 35)];
             [infoButton setFrame:CGRectMake(150, 32, 37, 35)];
             volumeHolder = [[UIView alloc] initWithFrame: CGRectMake(50, 450, 220, 20)];
-            [playingLabel setFrame:CGRectMake(0, 383, screenSize.width, 50)];
+            [playingLabel setFrame:CGRectMake(15, 383, screenSize.width * 0.9, 50)];
         }
     } else {
         //ipad
@@ -152,9 +156,11 @@
         
     } else if(player.playbackState == MPMoviePlaybackStatePlaying) {
         [player pause];
+        [feedbackLabel setText:@"Pausiert"];
         [playPauseButton setBackgroundImage:playButtonImage forState:UIControlStateNormal];
     } else if(player.playbackState == MPMoviePlaybackStatePaused) {
         [player play];
+        [feedbackLabel setText:@"On Air"];
         [playPauseButton setBackgroundImage:pauseButtonImage forState:UIControlStateNormal];
     }
 }
@@ -188,6 +194,7 @@
 - (IBAction)stopButtonTouched:(id)sender {
     
     [player stop];
+    [feedbackLabel setText:@"Angehalten"];
     [playPauseButton setBackgroundImage:playButtonImage forState:UIControlStateNormal];
    
 }

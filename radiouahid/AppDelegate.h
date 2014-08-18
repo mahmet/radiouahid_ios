@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <BugSense-iOS/BugSenseController.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
