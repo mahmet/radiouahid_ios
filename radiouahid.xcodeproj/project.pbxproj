@@ -7,11 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		701271A7199F6677004B1E88 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 701271A6199F6677004B1E88 /* FacebookSDK.framework */; };
 		701271A9199F6B69004B1E88 /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = 701271A8199F6B69004B1E88 /* info.png */; };
 		703CE2C719A28BF300D09CB3 /* MarqueeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 703CE2C619A28BF300D09CB3 /* MarqueeLabel.m */; };
 		703CE2C919A28C0A00D09CB3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 703CE2C819A28C0A00D09CB3 /* QuartzCore.framework */; };
-		703CE2CB19A291AA00D09CB3 /* BugSense-iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 703CE2CA19A291AA00D09CB3 /* BugSense-iOS.framework */; };
 		703CE2CD19A291C000D09CB3 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 703CE2CC19A291C000D09CB3 /* SystemConfiguration.framework */; };
 		703CE2CF19A291C900D09CB3 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 703CE2CE19A291C900D09CB3 /* libz.dylib */; };
 		7042385618B53D1900A203A0 /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 7042385218B53D1900A203A0 /* facebook.png */; };
@@ -25,7 +23,6 @@
 		7050FC2818BA033C0048DB0F /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 7050FC2718BA033C0048DB0F /* arrow.png */; };
 		7050FC2A18BA03C80048DB0F /* contact_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 7050FC2918BA03C80048DB0F /* contact_button.png */; };
 		7050FC2C18BA1C800048DB0F /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7050FC2B18BA1C800048DB0F /* MessageUI.framework */; };
-		7056ACC618B6168A00E3214B /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7056ACC518B6168A00E3214B /* FacebookSDK.framework */; };
 		7094A5D118B75D41009B0EF0 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7094A5D018B75D41009B0EF0 /* Social.framework */; };
 		709884DE1899890D003318C2 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 709884DD1899890D003318C2 /* Reachability.m */; };
 		7098915F18B5129100F16B5F /* pause_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 7098915E18B5129100F16B5F /* pause_button.png */; };
@@ -36,7 +33,10 @@
 		70BBE28B18AD6DD100BFE5E5 /* logo_header.png in Resources */ = {isa = PBXBuildFile; fileRef = 70BBE28918AD6DD100BFE5E5 /* logo_header.png */; };
 		70BBE28E18AD6F7E00BFE5E5 /* play_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 70BBE28C18AD6F7E00BFE5E5 /* play_button.png */; };
 		70BBE28F18AD6F7E00BFE5E5 /* stop_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 70BBE28D18AD6F7E00BFE5E5 /* stop_button.png */; };
+		70CACC411A6C00DF00331736 /* SplunkMint-iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70CACC401A6C00DF00331736 /* SplunkMint-iOS.framework */; };
+		70CACC431A6C022300331736 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70CACC421A6C022300331736 /* CoreTelephony.framework */; };
 		70EA37B81899241700A7DE39 /* radiouahid_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 70EA37B71899241700A7DE39 /* radiouahid_logo.png */; };
+		70F577401A6EBF3C00EF6FA1 /* share_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 70F5773F1A6EBF3C00EF6FA1 /* share_button.png */; };
 		E2B3A1F11881C0160053EE19 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2B3A1F01881C0160053EE19 /* Foundation.framework */; };
 		E2B3A1F31881C0160053EE19 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2B3A1F21881C0160053EE19 /* CoreGraphics.framework */; };
 		E2B3A1F51881C0160053EE19 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2B3A1F41881C0160053EE19 /* UIKit.framework */; };
@@ -68,12 +68,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		701271A6199F6677004B1E88 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		701271A8199F6B69004B1E88 /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info.png; sourceTree = "<group>"; };
 		703CE2C519A28BF300D09CB3 /* MarqueeLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarqueeLabel.h; sourceTree = "<group>"; };
 		703CE2C619A28BF300D09CB3 /* MarqueeLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarqueeLabel.m; sourceTree = "<group>"; };
 		703CE2C819A28C0A00D09CB3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		703CE2CA19A291AA00D09CB3 /* BugSense-iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "BugSense-iOS.framework"; path = "../../../Downloads/BugSense 3.6/BugSense-iOS.framework"; sourceTree = "<group>"; };
 		703CE2CC19A291C000D09CB3 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		703CE2CE19A291C900D09CB3 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		7042385218B53D1900A203A0 /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
@@ -87,7 +85,6 @@
 		7050FC2718BA033C0048DB0F /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
 		7050FC2918BA03C80048DB0F /* contact_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contact_button.png; sourceTree = "<group>"; };
 		7050FC2B18BA1C800048DB0F /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
-		7056ACC518B6168A00E3214B /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		7094A5D018B75D41009B0EF0 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		709884DC1899890D003318C2 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		709884DD1899890D003318C2 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
@@ -99,7 +96,10 @@
 		70BBE28918AD6DD100BFE5E5 /* logo_header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_header.png; sourceTree = "<group>"; };
 		70BBE28C18AD6F7E00BFE5E5 /* play_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play_button.png; sourceTree = "<group>"; };
 		70BBE28D18AD6F7E00BFE5E5 /* stop_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stop_button.png; sourceTree = "<group>"; };
+		70CACC401A6C00DF00331736 /* SplunkMint-iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "SplunkMint-iOS.framework"; sourceTree = "<group>"; };
+		70CACC421A6C022300331736 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		70EA37B71899241700A7DE39 /* radiouahid_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = radiouahid_logo.png; sourceTree = "<group>"; };
+		70F5773F1A6EBF3C00EF6FA1 /* share_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share_button.png; sourceTree = "<group>"; };
 		E2B3A1ED1881C0160053EE19 /* radiouahid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = radiouahid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2B3A1F01881C0160053EE19 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E2B3A1F21881C0160053EE19 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -115,7 +115,7 @@
 		E2B3A2061881C0160053EE19 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		E2B3A2081881C0160053EE19 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E2B3A20E1881C0160053EE19 /* radiouahidTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = radiouahidTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E2B3A20F1881C0160053EE19 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		E2B3A20F1881C0160053EE19 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		E2B3A2171881C0160053EE19 /* radiouahidTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "radiouahidTests-Info.plist"; sourceTree = "<group>"; };
 		E2B3A2191881C0160053EE19 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E2B3A21B1881C0160053EE19 /* radiouahidTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = radiouahidTests.m; sourceTree = "<group>"; };
@@ -130,12 +130,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70CACC431A6C022300331736 /* CoreTelephony.framework in Frameworks */,
 				703CE2CF19A291C900D09CB3 /* libz.dylib in Frameworks */,
 				703CE2CD19A291C000D09CB3 /* SystemConfiguration.framework in Frameworks */,
-				703CE2CB19A291AA00D09CB3 /* BugSense-iOS.framework in Frameworks */,
 				703CE2C919A28C0A00D09CB3 /* QuartzCore.framework in Frameworks */,
 				7050FC2C18BA1C800048DB0F /* MessageUI.framework in Frameworks */,
-				701271A7199F6677004B1E88 /* FacebookSDK.framework in Frameworks */,
+				70CACC411A6C00DF00331736 /* SplunkMint-iOS.framework in Frameworks */,
 				7094A5D118B75D41009B0EF0 /* Social.framework in Frameworks */,
 				E2B3A22A1881CA5C0053EE19 /* AVFoundation.framework in Frameworks */,
 				E2B3A2281881C0440053EE19 /* AudioToolbox.framework in Frameworks */,
@@ -143,7 +143,6 @@
 				E2B3A1F31881C0160053EE19 /* CoreGraphics.framework in Frameworks */,
 				E2B3A1F51881C0160053EE19 /* UIKit.framework in Frameworks */,
 				E2B3A1F11881C0160053EE19 /* Foundation.framework in Frameworks */,
-				7056ACC618B6168A00E3214B /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,14 +181,13 @@
 		E2B3A1EF1881C0160053EE19 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				70CACC421A6C022300331736 /* CoreTelephony.framework */,
 				703CE2CE19A291C900D09CB3 /* libz.dylib */,
+				70CACC401A6C00DF00331736 /* SplunkMint-iOS.framework */,
 				703CE2CC19A291C000D09CB3 /* SystemConfiguration.framework */,
-				703CE2CA19A291AA00D09CB3 /* BugSense-iOS.framework */,
 				703CE2C819A28C0A00D09CB3 /* QuartzCore.framework */,
 				7050FC2B18BA1C800048DB0F /* MessageUI.framework */,
 				7094A5D018B75D41009B0EF0 /* Social.framework */,
-				7056ACC518B6168A00E3214B /* FacebookSDK.framework */,
-				701271A6199F6677004B1E88 /* FacebookSDK.framework */,
 				E2B3A2291881CA5C0053EE19 /* AVFoundation.framework */,
 				E2B3A2271881C0440053EE19 /* AudioToolbox.framework */,
 				E2B3A2251881C03D0053EE19 /* MediaPlayer.framework */,
@@ -222,6 +220,7 @@
 		E2B3A1F71881C0160053EE19 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				70F5773F1A6EBF3C00EF6FA1 /* share_button.png */,
 				701271A8199F6B69004B1E88 /* info.png */,
 				7050FC2918BA03C80048DB0F /* contact_button.png */,
 				7050FC2718BA033C0048DB0F /* arrow.png */,
@@ -357,6 +356,7 @@
 				E2EDBEB718B568A000E3065D /* logo.png in Resources */,
 				70BBE28718AD6BD000BFE5E5 /* green_bar.png in Resources */,
 				70BBE28B18AD6DD100BFE5E5 /* logo_header.png in Resources */,
+				70F577401A6EBF3C00EF6FA1 /* share_button.png in Resources */,
 				7098915F18B5129100F16B5F /* pause_button.png in Resources */,
 				70EA37B81899241700A7DE39 /* radiouahid_logo.png in Resources */,
 				7098916118B530CB00F16B5F /* pause_button_disabled.png in Resources */,
@@ -527,8 +527,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/mahmet/Documents/FacebookSDK,
-					/Users/mahmet/Downloads/BugSense,
-					3.6,
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "radiouahid/radiouahid-Prefix.pch";
@@ -551,8 +550,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/mahmet/Documents/FacebookSDK,
-					/Users/mahmet/Downloads/BugSense,
-					3.6,
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "radiouahid/radiouahid-Prefix.pch";

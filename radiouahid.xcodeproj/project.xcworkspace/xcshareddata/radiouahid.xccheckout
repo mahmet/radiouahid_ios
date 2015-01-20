@@ -10,29 +10,29 @@
 	<string>radiouahid</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>8F3D9327-FFDE-4B54-8AE1-EEB11270538F</key>
+		<key>0DDF9AF2C61CCCD5C6B74EB410B1CB2663BDA41E</key>
 		<string>https://github.com/mahmet/radiouahid_ios.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>radiouahid.xcodeproj/project.xcworkspace</string>
+	<string>radiouahid.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>8F3D9327-FFDE-4B54-8AE1-EEB11270538F</key>
+		<key>0DDF9AF2C61CCCD5C6B74EB410B1CB2663BDA41E</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/mahmet/radiouahid_ios.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>8F3D9327-FFDE-4B54-8AE1-EEB11270538F</string>
+	<string>0DDF9AF2C61CCCD5C6B74EB410B1CB2663BDA41E</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>8F3D9327-FFDE-4B54-8AE1-EEB11270538F</string>
+			<string>0DDF9AF2C61CCCD5C6B74EB410B1CB2663BDA41E</string>
 			<key>IDESourceControlWCCName</key>
 			<string>radiouahid_ios</string>
 		</dict>

@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import <FacebookSDK/FacebookSDK.h>
+#import <SplunkMint-iOS/SplunkMint-iOS.h>
 
 
 @implementation AppDelegate
@@ -15,8 +15,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    [BugSenseController sharedControllerWithBugSenseAPIKey:@"fc86df99"];
-    
+    //[[Mint sharedInstance] initAndStartSession:@"fc86df99"];
     return YES;
 }
 							
@@ -45,22 +44,6 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-}
-
-- (BOOL)application:(UIApplication *)application
-            openURL:(NSURL *)url
-  sourceApplication:(NSString *)sourceApplication
-         annotation:(id)annotation {
-    
-    BOOL urlWasHandled = [FBAppCall handleOpenURL:url
-                                sourceApplication:sourceApplication
-                                  fallbackHandler:^(FBAppCall *call) {
-                                      NSLog(@"Unhandled deep link: %@", url);
-                                      // Here goes the code to handle the links
-                                      // Use the links to show a relevant view of your app to the user
-                                  }];
-    
-    return urlWasHandled;
 }
 
 @end

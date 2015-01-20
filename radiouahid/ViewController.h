@@ -11,7 +11,6 @@
 #import "Reachability.h"
 #import <MessageUI/MessageUI.h>
 #import "MarqueeLabel.h"
-#import <BugSense-iOS/BugSenseController.h>
 
 @interface ViewController : UIViewController <MFMailComposeViewControllerDelegate>
 
@@ -26,7 +25,6 @@
 - (IBAction)hideInfoButton:(id)sender;
 
 @property Boolean firstStart;
-- (IBAction)shareOnFacebook:(id)sender;
 - (IBAction)shareOnTwitter:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UIView *infoView;
@@ -50,8 +48,6 @@
 -(void) handleInternetConnectionReturned;
 -(void) prepareFirstRun;
 -(BOOL) isFirstRun;
-
-- (NSDictionary*)parseURLParams:(NSString *)query;
 
 
 @end
