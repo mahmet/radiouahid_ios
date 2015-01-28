@@ -63,16 +63,9 @@
     }
     
     //Set up buttons
-    playPauseButton = [UIButton buttonWithType:UIButtonTypeCustom];
     playButtonImage = [UIImage imageNamed:@"play_button.png"];
     pauseButtonImage = [UIImage imageNamed:@"pause_button.png"];
-    [playPauseButton setBackgroundImage:pauseButtonImage forState:UIControlStateNormal];
-    [playPauseButton addTarget:self action:@selector(togglePlayingStream:) forControlEvents:UIControlEventTouchUpInside];
-    
-    stopButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    stopButtonImage = [UIImage imageNamed:@"stop_button.png"];
-    [stopButton setBackgroundImage:stopButtonImage forState:UIControlStateNormal];
-    [stopButton addTarget:self action:@selector(stopButtonTouched:) forControlEvents:UIControlEventTouchUpInside];
+    [playPauseButton setImage:pauseButtonImage forState:UIControlStateNormal];
     
     infoButton = [UIButton buttonWithType:UIButtonTypeCustom];
     UIImage *infoButtonImage = [UIImage imageNamed:@"info.png"];
@@ -97,25 +90,17 @@
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
         if (screenSize.height > 480.0f) {
             //iphone 5
-            [playPauseButton setFrame:CGRectMake(10, 523, 37, 35)];
             [infoButton setFrame:CGRectMake(32, 32, 37, 35)];
             volumeHolder = [[UIView alloc] initWithFrame: CGRectMake(50, 530, 220, 20)];
             [playingLabel setFrame:CGRectMake(15, 460, screenSize.width * 0.9, 50)];
         } else {
             //iphone 4
-            [playPauseButton setFrame:CGRectMake(10, 440, 37, 35)];
-            [stopButton setFrame:CGRectMake(275, 440, 37, 35)];
             [infoButton setFrame:CGRectMake(32, 32, 37, 35)];
             volumeHolder = [[UIView alloc] initWithFrame: CGRectMake(50, 450, 220, 20)];
             [playingLabel setFrame:CGRectMake(15, 383, screenSize.width * 0.9, 50)];
         }
-    } else {
-        //ipad
     }
     
-    [self.view addSubview:playPauseButton];
-    [self.view addSubview:stopButton];
-    //[self.view addSubview:infoButton];
     [self.view addSubview:playingLabel];
     
     [volumeHolder setBackgroundColor: [UIColor clearColor]];
@@ -149,18 +134,18 @@
     if (!player.playbackState == MPMoviePlaybackStatePlaying) {
         
         [player play];
-        [playPauseButton setBackgroundImage:pauseButtonImage forState:UIControlStateNormal];
+        [playPauseButton setImage:pauseButtonImage forState:UIControlStateNormal];
         
         
         
     } else if(player.playbackState == MPMoviePlaybackStatePlaying) {
         [player pause];
         [feedbackLabel setText:@"Pausiert"];
-        [playPauseButton setBackgroundImage:playButtonImage forState:UIControlStateNormal];
+        [playPauseButton setImage:playButtonImage forState:UIControlStateNormal];
     } else if(player.playbackState == MPMoviePlaybackStatePaused) {
         [player play];
         [feedbackLabel setText:@"On Air"];
-        [playPauseButton setBackgroundImage:pauseButtonImage forState:UIControlStateNormal];
+        [playPauseButton setImage:pauseButtonImage forState:UIControlStateNormal];
     }
 }
 
@@ -200,7 +185,7 @@
     
     [player stop];
     [feedbackLabel setText:@"Angehalten"];
-    [playPauseButton setBackgroundImage:playButtonImage forState:UIControlStateNormal];
+    [playPauseButton setImage:playButtonImage forState:UIControlStateNormal];
    
 }
 
@@ -209,12 +194,12 @@
     switch (event.subtype) {
         case UIEventSubtypeRemoteControlPlay:
             [player play];
-            [playPauseButton setBackgroundImage:pauseButtonImage forState:UIControlStateNormal];
+            [playPauseButton setImage:pauseButtonImage forState:UIControlStateNormal];
             break;
             
         case UIEventSubtypeRemoteControlPause:
             [player pause];
-            [playPauseButton setBackgroundImage:playButtonImage forState:UIControlStateNormal];
+            [playPauseButton setImage:playButtonImage forState:UIControlStateNormal];
             break;
             
         default:
@@ -279,7 +264,7 @@
     NSLog(@"No internet connection");
     [player stop];
     [playPauseButton setEnabled:NO];
-    [playPauseButton setBackgroundImage:[UIImage imageNamed:@"pause_button_disabled.png"] forState:UIControlStateDisabled];
+    [playPauseButton setImage:[UIImage imageNamed:@"pause_button_disabled.png"] forState:UIControlStateDisabled];
     UIAlertView *noInternetConnectionAlert = [[UIAlertView alloc] initWithTitle:@"Keine Internet Verbindung" message:@"Dein Gerät hat momentan keine Internet Verbindung, sobald du die Verbindung wieder hergestellt hast kannst du auf Radiouahid weiterhören!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
     [noInternetConnectionAlert show];
 }
