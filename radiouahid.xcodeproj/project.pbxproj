@@ -534,7 +534,7 @@
 				INFOPLIST_FILE = "radiouahid/radiouahid-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "0b8f3b47-8b8d-401b-87b7-006f1d105cfe";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -557,7 +557,7 @@
 				INFOPLIST_FILE = "radiouahid/radiouahid-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "0b8f3b47-8b8d-401b-87b7-006f1d105cfe";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
