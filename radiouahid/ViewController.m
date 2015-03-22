@@ -10,7 +10,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import <Social/Social.h>
 
-#define STREAM_URL @"http://174.36.1.92:5659/Live"
+#define STREAM_URL @"http://stardust.wavestreamer.com:5659/Live"
 
 @interface ViewController ()
 
