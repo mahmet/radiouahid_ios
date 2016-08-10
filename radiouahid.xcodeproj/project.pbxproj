@@ -36,6 +36,8 @@
 		70CACC411A6C00DF00331736 /* SplunkMint-iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70CACC401A6C00DF00331736 /* SplunkMint-iOS.framework */; };
 		70CACC431A6C022300331736 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70CACC421A6C022300331736 /* CoreTelephony.framework */; };
 		70EA37B81899241700A7DE39 /* radiouahid_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 70EA37B71899241700A7DE39 /* radiouahid_logo.png */; };
+		70F147091D5BCB5300CEE701 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70F147081D5BCB5300CEE701 /* LaunchScreen.storyboard */; };
+		70F1470B1D5BE1DC00CEE701 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70F1470A1D5BE1DC00CEE701 /* Default-568h@2x.png */; };
 		70F577401A6EBF3C00EF6FA1 /* share_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 70F5773F1A6EBF3C00EF6FA1 /* share_button.png */; };
 		E2B3A1F11881C0160053EE19 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2B3A1F01881C0160053EE19 /* Foundation.framework */; };
 		E2B3A1F31881C0160053EE19 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2B3A1F21881C0160053EE19 /* CoreGraphics.framework */; };
@@ -99,6 +101,8 @@
 		70CACC401A6C00DF00331736 /* SplunkMint-iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "SplunkMint-iOS.framework"; sourceTree = "<group>"; };
 		70CACC421A6C022300331736 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		70EA37B71899241700A7DE39 /* radiouahid_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = radiouahid_logo.png; sourceTree = "<group>"; };
+		70F147081D5BCB5300CEE701 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		70F1470A1D5BE1DC00CEE701 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		70F5773F1A6EBF3C00EF6FA1 /* share_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share_button.png; sourceTree = "<group>"; };
 		E2B3A1ED1881C0160053EE19 /* radiouahid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = radiouahid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2B3A1F01881C0160053EE19 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -202,6 +206,7 @@
 		E2B3A1F61881C0160053EE19 /* radiouahid */ = {
 			isa = PBXGroup;
 			children = (
+				70F1470A1D5BE1DC00CEE701 /* Default-568h@2x.png */,
 				703CE2C519A28BF300D09CB3 /* MarqueeLabel.h */,
 				703CE2C619A28BF300D09CB3 /* MarqueeLabel.m */,
 				709884DC1899890D003318C2 /* Reachability.h */,
@@ -211,6 +216,7 @@
 				E2B3A2021881C0160053EE19 /* Main.storyboard */,
 				E2B3A2051881C0160053EE19 /* ViewController.h */,
 				E2B3A2061881C0160053EE19 /* ViewController.m */,
+				70F147081D5BCB5300CEE701 /* LaunchScreen.storyboard */,
 				E2B3A2081881C0160053EE19 /* Images.xcassets */,
 				E2B3A1F71881C0160053EE19 /* Supporting Files */,
 			);
@@ -354,9 +360,11 @@
 				7050FC2218B9FC790048DB0F /* beta_info.png in Resources */,
 				7050FC2618BA019B0048DB0F /* milky.png in Resources */,
 				E2EDBEB718B568A000E3065D /* logo.png in Resources */,
+				70F147091D5BCB5300CEE701 /* LaunchScreen.storyboard in Resources */,
 				70BBE28718AD6BD000BFE5E5 /* green_bar.png in Resources */,
 				70BBE28B18AD6DD100BFE5E5 /* logo_header.png in Resources */,
 				70F577401A6EBF3C00EF6FA1 /* share_button.png in Resources */,
+				70F1470B1D5BE1DC00CEE701 /* Default-568h@2x.png in Resources */,
 				7098915F18B5129100F16B5F /* pause_button.png in Resources */,
 				70EA37B81899241700A7DE39 /* radiouahid_logo.png in Resources */,
 				7098916118B530CB00F16B5F /* pause_button_disabled.png in Resources */,
@@ -521,8 +529,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Muhamed Ahmetovic (3P3H5QKCM4)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Muhamed Ahmetovic (3P3H5QKCM4)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -544,8 +552,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Muhamed Ahmetovic (3P3H5QKCM4)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Muhamed Ahmetovic (3P3H5QKCM4)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

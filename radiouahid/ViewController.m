@@ -10,7 +10,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import <Social/Social.h>
 
-#define STREAM_URL @"http://stardust.wavestreamer.com:5659/Live"
+#define STREAM_URL @"http://37.187.90.196:9018/stream"
 
 @interface ViewController ()
 
@@ -88,16 +88,28 @@
     CGSize screenSize = [[UIScreen mainScreen] bounds].size;
     
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
-        if (screenSize.height > 480.0f) {
+        if (screenSize.height > 480.0f && screenSize.height < 569.0f) {
             //iphone 5
             [infoButton setFrame:CGRectMake(32, 32, 37, 35)];
             volumeHolder = [[UIView alloc] initWithFrame: CGRectMake(50, 530, 220, 20)];
             [playingLabel setFrame:CGRectMake(15, 460, screenSize.width * 0.9, 50)];
-        } else {
+        } else if (screenSize.height < 481.0f) {
             //iphone 4
             [infoButton setFrame:CGRectMake(32, 32, 37, 35)];
             volumeHolder = [[UIView alloc] initWithFrame: CGRectMake(50, 450, 220, 20)];
             [playingLabel setFrame:CGRectMake(15, 383, screenSize.width * 0.9, 50)];
+        } else if (screenSize.height > 568.0f && screenSize.height < 668.0f) {
+            //iphone 6
+            NSLog(@"Iphone 6");
+            [infoButton setFrame:CGRectMake(32, 32, 37, 35)];
+            volumeHolder = [[UIView alloc] initWithFrame: CGRectMake(56, 630, 260, 20)];
+            [playingLabel setFrame:CGRectMake(15, 545, screenSize.width * 0.9, 50)];
+        } else if (screenSize.height > 667.0f && screenSize.height < 737.0f) {
+            //iphone 6 plus
+            NSLog(@"Iphone 6 plus");
+            [infoButton setFrame:CGRectMake(32, 32, 37, 35)];
+            volumeHolder = [[UIView alloc] initWithFrame: CGRectMake(56, 700, 300, 20)];
+            [playingLabel setFrame:CGRectMake(15, 600, screenSize.width * 0.9, 50)];
         }
     }
     
@@ -131,7 +143,7 @@
         [spinner startAnimating];
         [feedbackLabel setText:@"Verbindung wird hergestellt..."];
     }
-    if (!player.playbackState == MPMoviePlaybackStatePlaying) {
+    if (!(player.playbackState == MPMoviePlaybackStatePlaying)) {
         
         [player play];
         [playPauseButton setImage:pauseButtonImage forState:UIControlStateNormal];
