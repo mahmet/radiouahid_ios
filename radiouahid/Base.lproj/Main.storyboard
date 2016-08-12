@@ -103,7 +103,7 @@
                                         <rect key="frame" x="0.0" y="56" width="320" height="316"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="beta_info.png" translatesAutoresizingMaskIntoConstraints="NO" id="jbf-L2-Z2K">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="feedback_info.png" translatesAutoresizingMaskIntoConstraints="NO" id="jbf-L2-Z2K">
                                         <rect key="frame" x="33" y="59" width="254" height="294"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="arrow.png" translatesAutoresizingMaskIntoConstraints="NO" id="skk-O9-7eg">
@@ -177,9 +177,9 @@
     </scenes>
     <resources>
         <image name="arrow.png" width="84" height="99"/>
-        <image name="beta_info.png" width="508" height="589"/>
         <image name="bg.png" width="768" height="1280"/>
         <image name="contact_button.png" width="117" height="86"/>
+        <image name="feedback_info.png" width="511" height="553"/>
         <image name="info.png" width="117" height="86"/>
         <image name="logo.png" width="450" height="383"/>
         <image name="play_button.png" width="97" height="91"/>

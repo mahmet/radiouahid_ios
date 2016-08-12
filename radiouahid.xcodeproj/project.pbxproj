@@ -35,6 +35,7 @@
 		70BBE28F18AD6F7E00BFE5E5 /* stop_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 70BBE28D18AD6F7E00BFE5E5 /* stop_button.png */; };
 		70CACC411A6C00DF00331736 /* SplunkMint-iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70CACC401A6C00DF00331736 /* SplunkMint-iOS.framework */; };
 		70CACC431A6C022300331736 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70CACC421A6C022300331736 /* CoreTelephony.framework */; };
+		70D436E51D5E8F2E00CF9938 /* feedback_info.png in Resources */ = {isa = PBXBuildFile; fileRef = 70D436E41D5E8F2E00CF9938 /* feedback_info.png */; };
 		70EA37B81899241700A7DE39 /* radiouahid_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 70EA37B71899241700A7DE39 /* radiouahid_logo.png */; };
 		70F147091D5BCB5300CEE701 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70F147081D5BCB5300CEE701 /* LaunchScreen.storyboard */; };
 		70F1470B1D5BE1DC00CEE701 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70F1470A1D5BE1DC00CEE701 /* Default-568h@2x.png */; };
@@ -100,6 +101,7 @@
 		70BBE28D18AD6F7E00BFE5E5 /* stop_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stop_button.png; sourceTree = "<group>"; };
 		70CACC401A6C00DF00331736 /* SplunkMint-iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "SplunkMint-iOS.framework"; sourceTree = "<group>"; };
 		70CACC421A6C022300331736 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		70D436E41D5E8F2E00CF9938 /* feedback_info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = feedback_info.png; sourceTree = "<group>"; };
 		70EA37B71899241700A7DE39 /* radiouahid_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = radiouahid_logo.png; sourceTree = "<group>"; };
 		70F147081D5BCB5300CEE701 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		70F1470A1D5BE1DC00CEE701 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 		E2B3A1F71881C0160053EE19 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				70D436E41D5E8F2E00CF9938 /* feedback_info.png */,
 				70F5773F1A6EBF3C00EF6FA1 /* share_button.png */,
 				701271A8199F6B69004B1E88 /* info.png */,
 				7050FC2918BA03C80048DB0F /* contact_button.png */,
@@ -373,6 +376,7 @@
 				7042385818B53D1900A203A0 /* title_playing_box.png in Resources */,
 				7042385B18B53E8E00A203A0 /* battery_bar.png in Resources */,
 				70BBE28A18AD6DD100BFE5E5 /* bg.png in Resources */,
+				70D436E51D5E8F2E00CF9938 /* feedback_info.png in Resources */,
 				70BBE28F18AD6F7E00BFE5E5 /* stop_button.png in Resources */,
 				E2B3A2091881C0160053EE19 /* Images.xcassets in Resources */,
 				7050FC2A18BA03C80048DB0F /* contact_button.png in Resources */,
